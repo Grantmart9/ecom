@@ -11,10 +11,10 @@ import I8 from "Images/I8.jpg";
 
 // Text color //
 export const textcolor = "#4A403C";
-export const layouttextcolor = "black";
+export const layouttextcolor = "#f0f7f7";
 
 // Background colors //
-export const layoutbgcolor = "whitesmoke";
+export const layoutbgcolor = "#434a4a";
 export const masterbgcolor = layoutbgcolor;
 export const pagebgcolor = "white";
 
@@ -88,11 +88,27 @@ export const Routes = [
   { path: "/home", name: "Home" },
   {
     path: "/shop",
-    name: "Shop By Appartment",
+    name: "Shop By Deppartment",
+    sub: [
+      { path: "/shop1", name: "Shop 1" },
+      { path: "/shop2", name: "Shop 2" },
+      { path: "/shop3", name: "Shop 3" },
+      { path: "/shop4", name: "Shop 4" },
+      { path: "/shop5", name: "Shop 5" },
+      { path: "/shop6", name: "Shop 6" },
+      { path: "/shop7", name: "Shop 7" },
+      { path: "/shop8", name: "Shop 8" },
+      { path: "/shop9", name: "Shop 9" },
+    ],
   },
   {
     path: "/deals",
     name: "Deals",
+    sub: [
+      { path: "/deals20%", name: "20% off" },
+      { path: "/deals30%", name: "30% off" },
+      { path: "/deals50%", name: "40% off" },
+    ],
   },
   {
     path: "/contactus",
