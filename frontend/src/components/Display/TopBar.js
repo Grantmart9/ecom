@@ -31,19 +31,10 @@ export const TopBar = ({ setTopBarOn }) => {
             className="grid grid-cols-3 gap-3 p-1"
           >
             <IconButton>
-              <SearchIcon sx={{ color: "whitesmoke" }} fontSize="medium" />
+              <ShoppingBasketIcon sx={{ color: textcolor }} fontSize="medium" />
             </IconButton>
             <IconButton>
-              <ShoppingBasketIcon
-                sx={{ color: "whitesmoke" }}
-                fontSize="medium"
-              />
-            </IconButton>
-            <IconButton>
-              <AccountCircleIcon
-                sx={{ color: "whitesmoke" }}
-                fontSize="medium"
-              />
+              <AccountCircleIcon sx={{ color: textcolor }} fontSize="medium" />
             </IconButton>
           </div>
           <Container></Container>
@@ -58,7 +49,7 @@ export const TopBar = ({ setTopBarOn }) => {
           >
             <MenuIcon
               style={{
-                color: "whitesmoke",
+                color: textcolor,
               }}
             />
           </IconButton>
@@ -76,7 +67,7 @@ export const TopBar = ({ setTopBarOn }) => {
           >
             <MenuIcon
               style={{
-                color: "whitesmoke",
+                color: textcolor,
               }}
             />
           </IconButton>
@@ -87,26 +78,20 @@ export const TopBar = ({ setTopBarOn }) => {
           >
             <div className="inline-flex">
               <TextField
-                color="secondary"
+                color="warning"
                 sx={{ width: "25ch" }}
                 size="small"
                 variant="standard"
               />
               <IconButton>
-                <SearchIcon sx={{ color: "whitesmoke" }} fontSize="medium" />
+                <SearchIcon sx={{ color: textcolor }} fontSize="medium" />
               </IconButton>
             </div>
             <IconButton>
-              <ShoppingBasketIcon
-                sx={{ color: "whitesmoke" }}
-                fontSize="medium"
-              />
+              <ShoppingBasketIcon sx={{ color: textcolor }} fontSize="medium" />
             </IconButton>
             <IconButton>
-              <AccountCircleIcon
-                sx={{ color: "whitesmoke" }}
-                fontSize="medium"
-              />
+              <AccountCircleIcon sx={{ color: textcolor }} fontSize="medium" />
             </IconButton>
           </div>
         </Toolbar>

@@ -10,11 +10,11 @@ import I8 from "Images/I8.jpg";
 ///////////////////////////////
 
 // Text color //
-export const textcolor = "#cccaca";
+export const textcolor = "#4A403C";
 
 // Background colors //
-export const layoutbgcolor = "#12181a";
-export const masterbgcolor = "#262c2e";
+export const layoutbgcolor = "#EDE7F6";
+export const masterbgcolor = "#EDE7F6";
 
 // Text font //
 export const AppFont = "Roboto, sans-serif";
@@ -85,12 +85,12 @@ export const ServiceList = [
 export const Routes = [
   { path: "/home", name: "Home" },
   {
-    path: "/aboutus",
-    name: "About Us",
+    path: "/shop",
+    name: "Shop By Appartment",
   },
   {
-    path: "/service",
-    name: "Services",
+    path: "/deals",
+    name: "Deals",
   },
   {
     path: "/contactus",
