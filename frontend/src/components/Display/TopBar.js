@@ -18,7 +18,7 @@ export const TopBar = ({ setTopBarOn }) => {
   return (
     <AppBar
       position="fixed"
-      elevation={0}
+      elevation={1}
       sx={{
         backgroundColor: layoutbgcolor,
       }}

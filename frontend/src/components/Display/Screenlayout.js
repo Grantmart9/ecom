@@ -15,6 +15,7 @@ export const ScreenLayout = () => {
   };
 
   const isResponsiveSize = ["XS", "SM", "MD", "L"].includes(size);
+  const isResponsiveSize2 = ["XS", "SM", "MD"].includes(size);
 
   return (
     <div
@@ -35,12 +36,12 @@ export const ScreenLayout = () => {
                   style={{
                     position: "fixed",
                     top: 0, // Ensure it's at the top of the viewport
-                    left: 5, // Align to the left edge
-                    right: 5, // Stretch to the right edge
+                    left: isResponsiveSize2 ? 10 : 23, // Align to the left edge
+                    right: isResponsiveSize2 ? 10 : 23, // Stretch to the right edge
                     zIndex: 1000, // Ensure it’s on top of other content
                     backgroundColor: layoutbgcolor,
                   }}
-                  className="rounded-b-xl"
+                  className="rounded-b-3xl"
                 >
                   <SideBar setTopBarOn={toggleTopBar} />
                 </div>

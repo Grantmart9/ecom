@@ -6,7 +6,7 @@ import { AppFont, ButtonStyle } from "./AppControl";
 
 export const SideBar = ({ setTopBarOn }) => {
   const size = Size();
-  const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
+  const isResponsiveSize = ["XS", "SM", "MD","L"].includes(size);
 
   return (
     <div

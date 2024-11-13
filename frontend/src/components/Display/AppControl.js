@@ -11,18 +11,18 @@ import I8 from "Images/I8.jpg";
 
 // Text color //
 export const textcolor = "#4A403C";
-export const layouttextcolor = "whitesmoke";
+export const layouttextcolor = "black";
 
 // Background colors //
-export const layoutbgcolor = "#4b7a77";
+export const layoutbgcolor = "whitesmoke";
 export const masterbgcolor = layoutbgcolor;
-export const pagebgcolor = "whitesmoke";
+export const pagebgcolor = "white";
 
 // Text font //
 export const AppFont = "Roboto, sans-serif";
 
 // Button Styling //
-export const ButtonStyle = { bgcolor: "transparent", color: "whitesmoke" };
+export const ButtonStyle = { bgcolor: layoutbgcolor, color: layouttextcolor };
 
 // Add company details here //
 export const CompanyName = "CloudCraft";
