@@ -28,7 +28,7 @@ export const TopBar = ({ setTopBarOn }) => {
         <Toolbar disableGutters>
           <div
             style={{ marginLeft: "45px" }}
-            className="grid grid-cols-3 gap-3 p-1"
+            className="grid grid-cols-3 gap-10 p-1"
           >
             <IconButton>
               <ShoppingBasketIcon sx={{ color: layouttextcolor }} fontSize="medium" />

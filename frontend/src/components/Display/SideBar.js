@@ -9,7 +9,6 @@ import {
 import { Size } from "components/Display/media-query";
 import { AppFont, ButtonStyle } from "./AppControl";
 import Accordion from "@mui/material/Accordion";
-import AccordionActions from "@mui/material/AccordionActions";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -23,24 +22,33 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
           boxShadow: "none",
         }}
       >
-        <AccordionSummary
-          aria-controls="panel1-content"
-          id="panel1-header"
-          style={{
-            color: layouttextcolor,
-            fontSize: "10pt",
-            fontFamily: AppFont,
-            fontWeight: "bold",
+        <div className="flex align-center justify-center">
+          <AccordionSummary
+            style={{
+              color: layouttextcolor,
+              fontSize: isResponsiveSize ? "4pt" : "10pt",
+              fontFamily: AppFont,
+              fontWeight: "bold",
+            }}
+            sx={{ boxShadow: "none" }}
+          >
+            {Routes[1].name}
+          </AccordionSummary>
+        </div>
+        <AccordionDetails
+          className="grid grid-flow-row gap-1 mt-1 rounded-md"
+          sx={{
+            boxShadow: "none",
+            position: isResponsiveSize ? "fixed" : "inherit",
+            backgroundColor: layoutbgcolor,
           }}
         >
-          {Routes[1].name}
-        </AccordionSummary>
-        <AccordionDetails>
           {Routes[1].sub.map((button, i) => (
             <Button
               key={i}
               href={button.path}
               sx={ButtonStyle}
+              className="flex align-center justify-center"
               onClick={setTopBarOn}
               style={{
                 textTransform: "none",
@@ -66,24 +74,33 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
           boxShadow: "none",
         }}
       >
-        <AccordionSummary
-          aria-controls="panel1-content"
-          id="panel1-header"
-          style={{
-            color: layouttextcolor,
-            fontSize: "10pt",
-            fontFamily: AppFont,
-            fontWeight: "bold",
+        <div className="flex align-center justify-center">
+          <AccordionSummary
+            style={{
+              color: layouttextcolor,
+              fontSize: isResponsiveSize ? "5pt" : "10pt",
+              fontFamily: AppFont,
+              fontWeight: "bold",
+            }}
+            sx={{ boxShadow: "none" }}
+          >
+            {Routes[2].name}
+          </AccordionSummary>
+        </div>
+        <AccordionDetails
+          className="grid grid-flow-row gap-1 mt-1 rounded-md"
+          sx={{
+            boxShadow: "none",
+            position: isResponsiveSize ? "fixed" : "inherit",
+            backgroundColor: layoutbgcolor,
           }}
         >
-          {Routes[2].name}
-        </AccordionSummary>
-        <AccordionDetails>
           {Routes[2].sub.map((button, i) => (
             <Button
               key={i}
               href={button.path}
               sx={ButtonStyle}
+              className="flex align-center justify-center"
               onClick={setTopBarOn}
               style={{
                 textTransform: "none",
@@ -115,7 +132,7 @@ export const SideBar = ({ setTopBarOn }) => {
     <div
       className={`grid grid-${
         isResponsiveSize ? "cols-4" : "row-span-1"
-      } gap-1 mt-${isResponsiveSize ? "16" : "20"} rounded-${
+      } gap-2 mt-${isResponsiveSize ? "16" : "20"} rounded-${
         isResponsiveSize ? "b-md" : "r-md"
       } px-2 pb-3 pt-2`}
     >

@@ -41,7 +41,7 @@ export const ScreenLayout = () => {
                     zIndex: 1000, // Ensure it’s on top of other content
                     backgroundColor: layoutbgcolor,
                   }}
-                  className="rounded-b-3xl"
+                  className="rounded-b-3xl shadow-sm"
                 >
                   <SideBar setTopBarOn={toggleTopBar} />
                 </div>

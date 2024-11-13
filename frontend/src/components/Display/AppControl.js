@@ -14,7 +14,7 @@ export const textcolor = "#4A403C";
 export const layouttextcolor = "#f0f7f7";
 
 // Background colors //
-export const layoutbgcolor = "#434a4a";
+export const layoutbgcolor = "black";
 export const masterbgcolor = layoutbgcolor;
 export const pagebgcolor = "white";
 
