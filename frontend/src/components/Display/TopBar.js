@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import { Size } from "./media-query";
 import Container from "@mui/material/Container";
 import Logo from "Images/icon.png";
-import { layoutbgcolor, textcolor } from "./AppControl";
+import { layoutbgcolor, layouttextcolor, textcolor } from "./AppControl";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import SearchIcon from "@mui/icons-material/Search";
@@ -22,7 +22,7 @@ export const TopBar = ({ setTopBarOn }) => {
       sx={{
         backgroundColor: layoutbgcolor,
       }}
-      className={`rounded-${isResponsiveSize ? "b-lg" : "br-lg"}`}
+      className={`rounded-${isResponsiveSize ? "b-xl" : "b-4xl"}`}
     >
       {isResponsiveSize ? (
         <Toolbar disableGutters>
@@ -31,10 +31,10 @@ export const TopBar = ({ setTopBarOn }) => {
             className="grid grid-cols-3 gap-3 p-1"
           >
             <IconButton>
-              <ShoppingBasketIcon sx={{ color: textcolor }} fontSize="medium" />
+              <ShoppingBasketIcon sx={{ color: layouttextcolor }} fontSize="medium" />
             </IconButton>
             <IconButton>
-              <AccountCircleIcon sx={{ color: textcolor }} fontSize="medium" />
+              <AccountCircleIcon sx={{ color: layouttextcolor }} fontSize="medium" />
             </IconButton>
           </div>
           <Container></Container>
@@ -49,7 +49,7 @@ export const TopBar = ({ setTopBarOn }) => {
           >
             <MenuIcon
               style={{
-                color: textcolor,
+                color: layouttextcolor,
               }}
             />
           </IconButton>
@@ -67,7 +67,7 @@ export const TopBar = ({ setTopBarOn }) => {
           >
             <MenuIcon
               style={{
-                color: textcolor,
+                color: layouttextcolor,
               }}
             />
           </IconButton>
@@ -84,14 +84,14 @@ export const TopBar = ({ setTopBarOn }) => {
                 variant="standard"
               />
               <IconButton>
-                <SearchIcon sx={{ color: textcolor }} fontSize="medium" />
+                <SearchIcon sx={{ color: layouttextcolor }} fontSize="medium" />
               </IconButton>
             </div>
             <IconButton>
-              <ShoppingBasketIcon sx={{ color: textcolor }} fontSize="medium" />
+              <ShoppingBasketIcon sx={{ color: layouttextcolor }} fontSize="medium" />
             </IconButton>
             <IconButton>
-              <AccountCircleIcon sx={{ color: textcolor }} fontSize="medium" />
+              <AccountCircleIcon sx={{ color: layouttextcolor }} fontSize="medium" />
             </IconButton>
           </div>
         </Toolbar>

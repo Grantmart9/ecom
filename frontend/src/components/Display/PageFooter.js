@@ -9,8 +9,8 @@ export const PageFooter = () => {
     <div
       style={{
         backgroundColor: layoutbgcolor,
-        paddingBottom: "30pt",
-        paddingTop: "30pt",
+        paddingBottom: "5pt",
+        paddingTop: "5pt",
       }}
       className="grid sm:grid-cols-3 gap-2"
     >

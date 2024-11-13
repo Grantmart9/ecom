@@ -11,10 +11,12 @@ import I8 from "Images/I8.jpg";
 
 // Text color //
 export const textcolor = "#4A403C";
+export const layouttextcolor = "whitesmoke";
 
 // Background colors //
-export const layoutbgcolor = "#EDE7F6";
-export const masterbgcolor = "#EDE7F6";
+export const layoutbgcolor = "#4b7a77";
+export const masterbgcolor = layoutbgcolor;
+export const pagebgcolor = "whitesmoke";
 
 // Text font //
 export const AppFont = "Roboto, sans-serif";
@@ -35,7 +37,7 @@ export const SocialMediaLinks = [
   { path: "https://instagram.com/johndoe" },
   { path: "https://instagram.com/johndoe" },
   { path: "https://instagram.com/johndoe" },
-  { path: "tel:"+CompanyTel },
+  { path: "tel:" + CompanyTel },
 ];
 
 // Service List //

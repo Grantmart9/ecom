@@ -10,7 +10,7 @@ import I5 from "Images/I5.jpg";
 import I6 from "Images/I6.jpg";
 import I7 from "Images/I7.jpg";
 import I8 from "Images/I8.jpg";
-import { layoutbgcolor, textcolor } from "components/Display/AppControl";
+import { layoutbgcolor, layouttextcolor, textcolor } from "components/Display/AppControl";
 
 export const AboutUs = () => {
   return (
@@ -18,13 +18,13 @@ export const AboutUs = () => {
       <Card style={{ backgroundColor: layoutbgcolor, boxShadow: "none" }}>
         <CardContent
           className="flex align-center justify-center"
-          sx={{ color: textcolor }}
+          sx={{ color: layouttextcolor }}
         >
           About Us
         </CardContent>
         <CardContent
           className="flex text-center justify-center"
-          sx={{ color: textcolor }}
+          sx={{ color: layouttextcolor }}
         >
           We transform ideas into innovative software solutions with a focus on
           exceptional user experiences. Our experienced team delivers tailored

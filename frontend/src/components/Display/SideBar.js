@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { Routes, textcolor } from "components/Display/AppControl";
+import { layoutbgcolor, layouttextcolor, Routes, textcolor } from "components/Display/AppControl";
 import { Size } from "components/Display/media-query";
 import { AppFont, ButtonStyle } from "./AppControl";
 
@@ -30,7 +30,7 @@ export const SideBar = ({ setTopBarOn }) => {
             <div
               style={{
                 fontFamily: AppFont,
-                color:textcolor,
+                color:layouttextcolor,
                 fontWeight:"bold",
                 fontSize: isResponsiveSize ? "5pt" : "10pt",
               }}

@@ -5,6 +5,7 @@ import {
   AppFont,
   ButtonStyle,
   layoutbgcolor,
+  pagebgcolor,
   textcolor,
 } from "components/Display/AppControl";
 
@@ -14,7 +15,7 @@ export const Enquire = () => {
       style={{
         fontFamily: AppFont,
         fontSize: "20pt",
-        backgroundColor: layoutbgcolor,
+        backgroundColor: pagebgcolor,
         paddingRight: "10pt",
         paddingLeft: "10pt",
         paddingBottom: "15pt",
@@ -32,7 +33,7 @@ export const Enquire = () => {
           style={{
             fontFamily: AppFont,
             color: textcolor,
-            backgroundColor: layoutbgcolor,
+            backgroundColor: pagebgcolor,
             fontSize: "10pt",
           }}
           className="grid grid-rows-1 gap-1 mt-5"

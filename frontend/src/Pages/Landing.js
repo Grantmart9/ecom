@@ -6,6 +6,7 @@ import {
   ButtonStyle,
   CompanyName,
   layoutbgcolor,
+  pagebgcolor,
   textcolor,
 } from "components/Display/AppControl";
 import CardActions from "@mui/material/CardActions";
@@ -21,7 +22,7 @@ const LandingContext = () => {
     const size = Size();
     const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
     return (
-      <div style={{minHeight:"45pt"}}>
+      <div style={{ minHeight: "45pt" }}>
         <TypeAnimation
           sequence={[
             "Welcome to Cloudcraft - ",
@@ -53,10 +54,10 @@ const LandingContext = () => {
     <div>
       <div
         style={{
-          backgroundColor: layoutbgcolor,
+          backgroundColor: pagebgcolor,
           color: textcolor,
         }}
-        className="text-lg text-center justify-center pt-3"
+        className="text-lg text-center justify-center pt-20"
       >
         <TextAnimation />
       </div>
@@ -64,7 +65,7 @@ const LandingContext = () => {
         style={{
           fontFamily: AppFont,
           color: textcolor,
-          backgroundColor: layoutbgcolor,
+          backgroundColor: pagebgcolor,
           border: "none",
         }}
       >
@@ -94,11 +95,13 @@ const LandingContext = () => {
         style={{
           fontFamily: AppFont,
           color: textcolor,
-          backgroundColor: layoutbgcolor,
+          backgroundColor: pagebgcolor,
           border: "none",
         }}
       >
-        <Button sx={ButtonStyle}  href="/AboutUs">Read more about {CompanyName}</Button>
+        <Button sx={ButtonStyle} href="/AboutUs">
+          Read more about {CompanyName}
+        </Button>
       </CardActions>
     </div>
   );
@@ -125,18 +128,6 @@ export const Landing = ({ topBarOn }) => {
           : "calc(100vw)",
       }}
     >
-      <div>
-        <video
-          autoPlay
-          muted
-          loop
-          style={{
-            zIndex: 1,
-            width: "100%",
-          }}
-          src={Vid}
-        />
-      </div>
       <div
         style={{
           zIndex: 2,

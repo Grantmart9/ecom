@@ -22,7 +22,7 @@ export const ScreenLayout = () => {
         display: "flex",
         flexDirection: "column",
         width: "100vw",
-        backgroundColor:masterbgcolor
+        height: "100vh",
       }}
     >
       <TopBar setTopBarOn={toggleTopBar} />
@@ -35,17 +35,18 @@ export const ScreenLayout = () => {
                   style={{
                     position: "fixed",
                     top: 0, // Ensure it's at the top of the viewport
-                    left: 0, // Align to the left edge
-                    right: 0, // Stretch to the right edge
+                    left: 5, // Align to the left edge
+                    right: 5, // Stretch to the right edge
                     zIndex: 1000, // Ensure it’s on top of other content
                     backgroundColor: layoutbgcolor,
                   }}
+                  className="rounded-b-xl"
                 >
                   <SideBar setTopBarOn={toggleTopBar} />
                 </div>
               </Slide>
               <div>
-                <ScreenLayoutInner className="h-screen" topBarOn={topBarOn} />
+                <ScreenLayoutInner topBarOn={topBarOn} />
               </div>
             </div>
           ) : (
@@ -54,11 +55,11 @@ export const ScreenLayout = () => {
                 <div
                   style={{
                     position: "fixed",
-                    height: "100vh",
                     paddingTop: "40pt",
                     width: "200px",
                     zIndex: 1000, // Ensure it’s on top of other content
                     backgroundColor: layoutbgcolor,
+                    height: "100vh",
                   }}
                 >
                   <SideBar setTopBarOn={toggleTopBar} />
@@ -67,10 +68,9 @@ export const ScreenLayout = () => {
               <div
                 style={{
                   marginLeft: "200px",
-                  height: "100vh",
                 }}
               >
-                <ScreenLayoutInner className="h-screen" topBarOn={topBarOn} />
+                <ScreenLayoutInner topBarOn={topBarOn} />
               </div>
             </div>
           )}
@@ -78,7 +78,7 @@ export const ScreenLayout = () => {
       )}
       {!topBarOn && (
         <div>
-          <ScreenLayoutInner className="h-screen" topBarOn={topBarOn} />
+          <ScreenLayoutInner topBarOn={topBarOn} />
         </div>
       )}
     </div>

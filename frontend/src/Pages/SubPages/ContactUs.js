@@ -4,6 +4,7 @@ import {
   CompanyEmail,
   CompanyTel,
   layoutbgcolor,
+  layouttextcolor,
   textcolor,
 } from "components/Display/AppControl";
 
@@ -13,13 +14,13 @@ export const ContactUs = () => {
       <Card sx={{ backgroundColor: layoutbgcolor, boxShadow: "none" }}>
         <CardContent
           className="flex align-center justify-center"
-          sx={{ color: textcolor }}
+          sx={{ color: layouttextcolor }}
         >
           Contact Us
         </CardContent>
         <CardContent
           className="grid grid-flow-row gap-0"
-          sx={{ color: textcolor }}
+          sx={{ color: layouttextcolor }}
         >
           <div className="flex text-center justify-center">{CompanyTel}</div>
           <div className="flex text-center justify-center">{CompanyAddrr}</div>
