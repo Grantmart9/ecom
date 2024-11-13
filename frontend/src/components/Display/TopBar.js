@@ -6,23 +6,45 @@ import IconButton from "@mui/material/IconButton";
 import { Size } from "./media-query";
 import Container from "@mui/material/Container";
 import Logo from "Images/icon.png";
-import { textcolor } from "./AppControl";
+import { layoutbgcolor, textcolor } from "./AppControl";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import SearchIcon from "@mui/icons-material/Search";
+import { TextField } from "@mui/material";
 
 export const TopBar = ({ setTopBarOn }) => {
   var size = Size();
-  const isResponsiveSize = ["XS", "SM"].includes(size);
+  const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
   return (
     <AppBar
       position="fixed"
       elevation={0}
       sx={{
-        backgroundColor: "transparent",
+        backgroundColor: layoutbgcolor,
       }}
+      className={`rounded-${isResponsiveSize ? "b-lg" : "br-lg"}`}
     >
       {isResponsiveSize ? (
         <Toolbar disableGutters>
-          <div style={{ marginLeft: "45px" }} className=" p-1">
-            <img width={100} src={Logo} />
+          <div
+            style={{ marginLeft: "45px" }}
+            className="grid grid-cols-3 gap-3 p-1"
+          >
+            <IconButton>
+              <SearchIcon sx={{ color: "whitesmoke" }} fontSize="medium" />
+            </IconButton>
+            <IconButton>
+              <ShoppingBasketIcon
+                sx={{ color: "whitesmoke" }}
+                fontSize="medium"
+              />
+            </IconButton>
+            <IconButton>
+              <AccountCircleIcon
+                sx={{ color: "whitesmoke" }}
+                fontSize="medium"
+              />
+            </IconButton>
           </div>
           <Container></Container>
           <IconButton
@@ -59,8 +81,33 @@ export const TopBar = ({ setTopBarOn }) => {
             />
           </IconButton>
           <Container></Container>
-          <div style={{ marginRight: "45px" }} className="p-1">
-            <img width={200} src={Logo} />
+          <div
+            style={{ marginRight: "45px" }}
+            className="grid grid-flow-col gap-3 p-1"
+          >
+            <div className="inline-flex">
+              <TextField
+                color="secondary"
+                sx={{ width: "25ch" }}
+                size="small"
+                variant="standard"
+              />
+              <IconButton>
+                <SearchIcon sx={{ color: "whitesmoke" }} fontSize="medium" />
+              </IconButton>
+            </div>
+            <IconButton>
+              <ShoppingBasketIcon
+                sx={{ color: "whitesmoke" }}
+                fontSize="medium"
+              />
+            </IconButton>
+            <IconButton>
+              <AccountCircleIcon
+                sx={{ color: "whitesmoke" }}
+                fontSize="medium"
+              />
+            </IconButton>
           </div>
         </Toolbar>
       )}
