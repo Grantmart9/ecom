@@ -38,7 +38,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
           </AccordionSummary>
         </div>
         <Slide
-          in={subMOn}
+          in={isResponsiveSize ? subMOn : true}
           direction="down"
           easing={{
             enter: "cubic-bezier(0, 1.5, .8, 1)",
@@ -101,7 +101,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
           </AccordionSummary>
         </div>
         <Slide
-          in={subMOn}
+          in={isResponsiveSize ? subMOn : true}
           direction="down"
           easing={{
             enter: "cubic-bezier(0, 1.5, .8, 1)",
