@@ -4,7 +4,6 @@ import { ContactUs } from "./SubPages/ContactUs";
 import { Enquire } from "./SubPages/Enquire";
 import { layoutbgcolor } from "components/Display/AppControl";
 import Vid from "Videos/Vid.mp4";
-import ContactImage from "Images/icon.png";
 import { SocialMediaIcons } from "components/Display/SocialMedia";
 
 export const Contact = ({ topBarOn }) => {

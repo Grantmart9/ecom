@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@mui/material";
 import {
   layoutbgcolor,
   layouttextcolor,
   Routes,
-  textcolor,
 } from "components/Display/AppControl";
 import { Size } from "components/Display/media-query";
 import { AppFont, ButtonStyle } from "./AppControl";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Slide from "@mui/material/Slide";
 
 const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
+  const [subMOn, setSubMOn] = useState(false);
+
   return (
     <>
       <Accordion
@@ -24,6 +25,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
       >
         <div className="flex align-center justify-center">
           <AccordionSummary
+            onClick={() => setSubMOn(!subMOn)}
             style={{
               color: layouttextcolor,
               fontSize: isResponsiveSize ? "4pt" : "10pt",
@@ -35,38 +37,40 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             {Routes[1].name}
           </AccordionSummary>
         </div>
-        <AccordionDetails
-          className="grid grid-flow-row gap-1 mt-1 rounded-md"
-          sx={{
-            boxShadow: "none",
-            position: isResponsiveSize ? "fixed" : "inherit",
-            backgroundColor: layoutbgcolor,
-          }}
-        >
-          {Routes[1].sub.map((button, i) => (
-            <Button
-              key={i}
-              href={button.path}
-              sx={ButtonStyle}
-              className="flex align-center justify-center"
-              onClick={setTopBarOn}
-              style={{
-                textTransform: "none",
-              }}
-            >
-              <div
+        <Slide in={subMOn} timeout={120} direction="down">
+          <AccordionDetails
+            className="grid grid-flow-row gap-1 mt-1 rounded-md"
+            sx={{
+              boxShadow: "none",
+              position: isResponsiveSize ? "fixed" : "inherit",
+              backgroundColor: layoutbgcolor,
+            }}
+          >
+            {Routes[1].sub.map((button, i) => (
+              <Button
+                key={i}
+                href={button.path}
+                sx={ButtonStyle}
+                className="flex align-center justify-center"
+                onClick={setTopBarOn}
                 style={{
-                  fontFamily: AppFont,
-                  color: layouttextcolor,
-                  fontWeight: "bold",
-                  fontSize: isResponsiveSize ? "5pt" : "10pt",
+                  textTransform: "none",
                 }}
               >
-                {button.name}
-              </div>
-            </Button>
-          ))}
-        </AccordionDetails>
+                <div
+                  style={{
+                    fontFamily: AppFont,
+                    color: layouttextcolor,
+                    fontWeight: "bold",
+                    fontSize: isResponsiveSize ? "5pt" : "10pt",
+                  }}
+                >
+                  {button.name}
+                </div>
+              </Button>
+            ))}
+          </AccordionDetails>
+        </Slide>
       </Accordion>
       <Accordion
         sx={{
@@ -76,6 +80,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
       >
         <div className="flex align-center justify-center">
           <AccordionSummary
+            onClick={() => setSubMOn(!subMOn)}
             style={{
               color: layouttextcolor,
               fontSize: isResponsiveSize ? "5pt" : "10pt",
@@ -87,38 +92,40 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             {Routes[2].name}
           </AccordionSummary>
         </div>
-        <AccordionDetails
-          className="grid grid-flow-row gap-1 mt-1 rounded-md"
-          sx={{
-            boxShadow: "none",
-            position: isResponsiveSize ? "fixed" : "inherit",
-            backgroundColor: layoutbgcolor,
-          }}
-        >
-          {Routes[2].sub.map((button, i) => (
-            <Button
-              key={i}
-              href={button.path}
-              sx={ButtonStyle}
-              className="flex align-center justify-center"
-              onClick={setTopBarOn}
-              style={{
-                textTransform: "none",
-              }}
-            >
-              <div
+        <Slide in={subMOn} timeout={120} direction="down">
+          <AccordionDetails
+            className="grid grid-flow-row gap-1 mt-1 rounded-md"
+            sx={{
+              boxShadow: "none",
+              position: isResponsiveSize ? "fixed" : "inherit",
+              backgroundColor: layoutbgcolor,
+            }}
+          >
+            {Routes[2].sub.map((button, i) => (
+              <Button
+                key={i}
+                href={button.path}
+                sx={ButtonStyle}
+                className="flex align-center justify-center"
+                onClick={setTopBarOn}
                 style={{
-                  fontFamily: AppFont,
-                  color: layouttextcolor,
-                  fontWeight: "bold",
-                  fontSize: isResponsiveSize ? "5pt" : "10pt",
+                  textTransform: "none",
                 }}
               >
-                {button.name}
-              </div>
-            </Button>
-          ))}
-        </AccordionDetails>
+                <div
+                  style={{
+                    fontFamily: AppFont,
+                    color: layouttextcolor,
+                    fontWeight: "bold",
+                    fontSize: isResponsiveSize ? "5pt" : "10pt",
+                  }}
+                >
+                  {button.name}
+                </div>
+              </Button>
+            ))}
+          </AccordionDetails>
+        </Slide>
       </Accordion>
     </>
   );

@@ -10,7 +10,11 @@ import I5 from "Images/I5.jpg";
 import I6 from "Images/I6.jpg";
 import I7 from "Images/I7.jpg";
 import I8 from "Images/I8.jpg";
-import { layoutbgcolor, layouttextcolor, textcolor } from "components/Display/AppControl";
+import {
+  layoutbgcolor,
+  layouttextcolor,
+  textcolor,
+} from "components/Display/AppControl";
 
 export const AboutUs = () => {
   return (
@@ -72,6 +76,7 @@ export const AboutUsMain = ({ topBarOn, isResponsiveSize }) => {
             <img
               srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=161&fit=crop&auto=format`}
+              alt="No File"
               loading="lazy"
             />
           </ImageListItem>

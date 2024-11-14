@@ -1,13 +1,8 @@
 import { Size } from "../../components/Display/media-query";
-import { Fade } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import {
-  layoutbgcolor,
-  pagebgcolor,
-  textcolor,
-} from "components/Display/AppControl";
+import { pagebgcolor, textcolor } from "components/Display/AppControl";
 import { ServiceList } from "components/Display/AppControl";
 
 export const ServicesSub = () => {
@@ -33,7 +28,7 @@ export const ServicesSub = () => {
       >
         {ServiceList.map((service, i) => (
           <Card key={i}>
-            <img src={service.image} />
+            <img src={service.image} alt="No File" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {service.service}
@@ -79,7 +74,7 @@ export const ServicesSubMain = ({ topBarOn }) => {
       >
         {ServiceList.map((service, i) => (
           <Card key={i}>
-            <img src={service.image} />
+            <img src={service.image} alt="No File" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {service.service}

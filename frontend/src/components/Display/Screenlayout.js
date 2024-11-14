@@ -4,7 +4,7 @@ import { ScreenLayoutInner } from "./ScreenLayoutInner";
 import { SideBar } from "./SideBar";
 import { Slide } from "@mui/material";
 import { Size } from "components/Display/media-query";
-import { layoutbgcolor, masterbgcolor } from "./AppControl";
+import { layoutbgcolor } from "./AppControl";
 
 export const ScreenLayout = () => {
   const size = Size();

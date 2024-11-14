@@ -1,10 +1,8 @@
-import { Size } from "components/Display/media-query";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import {
   AppFont,
   ButtonStyle,
-  layoutbgcolor,
   pagebgcolor,
   textcolor,
 } from "components/Display/AppControl";

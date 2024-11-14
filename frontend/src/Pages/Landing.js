@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { Size } from "components/Display/media-query";
-import Vid from "Videos/Vid.mp4";
 import {
   AppFont,
   ButtonStyle,
   CompanyName,
-  layoutbgcolor,
   pagebgcolor,
   textcolor,
 } from "components/Display/AppControl";

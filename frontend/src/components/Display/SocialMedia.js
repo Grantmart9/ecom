@@ -2,7 +2,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import { layouttextcolor, SocialMediaLinks, textcolor } from "./AppControl";
+import { layouttextcolor, SocialMediaLinks } from "./AppControl";
 import { Button } from "@mui/material";
 
 export const SocialMediaIcons = () => {
@@ -10,7 +10,10 @@ export const SocialMediaIcons = () => {
     <div className="flex align-center justify-center">
       <div className="grid grid-cols-4 gap-7 my-auto">
         <Button href={SocialMediaLinks[0].path}>
-          <InstagramIcon fontSize={"large"} style={{ color: layouttextcolor }} />
+          <InstagramIcon
+            fontSize={"large"}
+            style={{ color: layouttextcolor }}
+          />
         </Button>
         <Button href={SocialMediaLinks[1].path}>
           <FacebookIcon fontSize={"large"} style={{ color: layouttextcolor }} />
@@ -19,7 +22,10 @@ export const SocialMediaIcons = () => {
           <WhatsAppIcon fontSize={"large"} style={{ color: layouttextcolor }} />
         </Button>
         <Button href={SocialMediaLinks[3].path}>
-          <LocalPhoneIcon fontSize={"large"} style={{ color: layouttextcolor }} />
+          <LocalPhoneIcon
+            fontSize={"large"}
+            style={{ color: layouttextcolor }}
+          />
         </Button>
       </div>
     </div>
