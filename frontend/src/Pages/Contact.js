@@ -41,18 +41,6 @@ export const Contact = ({ topBarOn }) => {
           : "0pt",
       }}
     >
-      <div>
-        <video
-          autoPlay
-          muted
-          loop
-          style={{
-            zIndex: 1,
-            width: "100%",
-          }}
-          src={Vid}
-        />
-      </div>
       <div
         style={{
           zIndex: 3,
@@ -68,10 +56,7 @@ export const Contact = ({ topBarOn }) => {
           className="grid grid-rows-2 gap-2"
           style={{ backgroundColor: layoutbgcolor }}
         >
-          <ContactUs
-            topBarOn={topBarOn}
-            isResponsiveSize={isResponsiveSize}
-          />
+          <ContactUs topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
           <div>
             <SocialMediaIcons />
           </div>
