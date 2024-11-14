@@ -37,7 +37,14 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             {Routes[1].name}
           </AccordionSummary>
         </div>
-        <Slide in={subMOn} timeout={120} direction="down">
+        <Slide
+          in={subMOn}
+          direction="down"
+          easing={{
+            enter: "cubic-bezier(0, 1.5, .8, 1)",
+            exit: "ease",
+          }}
+        >
           <AccordionDetails
             className="grid grid-flow-row gap-1 mt-1 rounded-md"
             sx={{
@@ -92,7 +99,14 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             {Routes[2].name}
           </AccordionSummary>
         </div>
-        <Slide in={subMOn} timeout={120} direction="down">
+        <Slide
+          in={subMOn}
+          direction="down"
+          easing={{
+            enter: "cubic-bezier(0, 1.5, .8, 1)",
+            exit: "ease",
+          }}
+        >
           <AccordionDetails
             className="grid grid-flow-row gap-1 mt-1 rounded-md"
             sx={{
