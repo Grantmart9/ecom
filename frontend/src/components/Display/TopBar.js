@@ -29,11 +29,17 @@ export const TopBar = ({ setTopBarOn }) => {
             style={{ marginLeft: "45px" }}
             className="grid grid-cols-3 gap-10 p-1"
           >
-            <IconButton>
-              <ShoppingBasketIcon sx={{ color: layouttextcolor }} fontSize="medium" />
+            <IconButton href={"/shoppingcart"}>
+              <ShoppingBasketIcon
+                sx={{ color: layouttextcolor }}
+                fontSize="medium"
+              />
             </IconButton>
-            <IconButton>
-              <AccountCircleIcon sx={{ color: layouttextcolor }} fontSize="medium" />
+            <IconButton href={"/accountsettings"}>
+              <AccountCircleIcon
+                sx={{ color: layouttextcolor }}
+                fontSize="medium"
+              />
             </IconButton>
           </div>
           <Container></Container>
@@ -86,11 +92,17 @@ export const TopBar = ({ setTopBarOn }) => {
                 <SearchIcon sx={{ color: layouttextcolor }} fontSize="medium" />
               </IconButton>
             </div>
-            <IconButton>
-              <ShoppingBasketIcon sx={{ color: layouttextcolor }} fontSize="medium" />
+            <IconButton href={"/shoppingcart"}>
+              <ShoppingBasketIcon
+                sx={{ color: layouttextcolor }}
+                fontSize="medium"
+              />
             </IconButton>
-            <IconButton>
-              <AccountCircleIcon sx={{ color: layouttextcolor }} fontSize="medium" />
+            <IconButton href={"/accountsettings"}>
+              <AccountCircleIcon
+                sx={{ color: layouttextcolor }}
+                fontSize="medium"
+              />
             </IconButton>
           </div>
         </Toolbar>

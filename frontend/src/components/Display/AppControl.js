@@ -8,6 +8,7 @@ import I6 from "Images/I6.jpg";
 import I7 from "Images/I7.jpg";
 import I8 from "Images/I8.jpg";
 ///////////////////////////////
+import HomeIcon from '@mui/icons-material/Home';
 
 // Text color //
 export const textcolor = "#4A403C";
@@ -90,21 +91,22 @@ export const Routes = [
     path: "/shop",
     name: "Products",
     sub: [
-      { path: "/women", name: "Women" },
-      { path: "/men", name: "Men" },
-      { path: "/kids", name: "Kids" },
-      { path: "/baby", name: "Babies" },
-      { path: "/home", name: "Home" },
-      { path: "/beauty", name: "Beauty" },
+      { path: "/products/all", name: "- All" },
+      { path: "/products/women", name: "- Women" },
+      { path: "/products/men", name: "- Men" },
+      { path: "/products/kids", name: "- Kids" },
+      { path: "/products/baby", name: "- Babies" },
+      { path: "/products/home", name: "- Home" },
+      { path: "/products/beauty", name: "- Beauty" },
     ],
   },
   {
     path: "/deals",
     name: "Deals",
     sub: [
-      { path: "/deals20", name: "20% off" },
-      { path: "/deals30", name: "30% off" },
-      { path: "/deals50", name: "40% off" },
+      { path: "/deals20", name: "- 20% off" },
+      { path: "/deals30", name: "- 30% off" },
+      { path: "/deals50", name: "- 40% off" },
     ],
   },
   {

@@ -12,138 +12,147 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Slide from "@mui/material/Slide";
 
-const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
+const DepartmentButton = ({setTopBarOn}) => {
+  const size = Size();
+  const isResponsiveSize = ["XS", "SM", "MD", "L"].includes(size);
   const [subMOn, setSubMOn] = useState(false);
 
   return (
-    <>
-      <Accordion
-        sx={{
-          backgroundColor: "transparent",
-          boxShadow: "none",
+    <Accordion
+      sx={{
+        backgroundColor: "transparent",
+        boxShadow: "none",
+      }}
+    >
+      <div className="flex align-center justify-center">
+        <AccordionSummary
+          onClick={() => setSubMOn(!subMOn)}
+          style={{
+            color: layouttextcolor,
+            fontSize: isResponsiveSize ? "7pt" : "10pt",
+            fontFamily: AppFont,
+            fontWeight: "bold",
+          }}
+          sx={{ boxShadow: "none" }}
+        >
+          {Routes[1].name}
+        </AccordionSummary>
+      </div>
+      <Slide
+        in={isResponsiveSize ? subMOn : true}
+        direction="down"
+        easing={{
+          enter: "cubic-bezier(0, 1.5, .8, 1)",
+          exit: "ease",
         }}
       >
-        <div className="flex align-center justify-center">
-          <AccordionSummary
-            onClick={() => setSubMOn(!subMOn)}
-            style={{
-              color: layouttextcolor,
-              fontSize: isResponsiveSize ? "7pt" : "10pt",
-              fontFamily: AppFont,
-              fontWeight: "bold",
-            }}
-            sx={{ boxShadow: "none" }}
-          >
-            {Routes[1].name}
-          </AccordionSummary>
-        </div>
-        <Slide
-          in={isResponsiveSize ? subMOn : true}
-          direction="down"
-          easing={{
-            enter: "cubic-bezier(0, 1.5, .8, 1)",
-            exit: "ease",
+        <AccordionDetails
+          className="grid grid-flow-row gap-1 mt-1 rounded-md"
+          sx={{
+            boxShadow: "none",
+            position: isResponsiveSize ? "fixed" : "inherit",
+            marginTop: isResponsiveSize ? "22pt" : 0,
+            backgroundColor: layoutbgcolor,
           }}
         >
-          <AccordionDetails
-            className="grid grid-flow-row gap-1 mt-1 rounded-md"
-            sx={{
-              boxShadow: "none",
-              position: isResponsiveSize ? "fixed" : "inherit",
-              marginTop: isResponsiveSize ? "22pt" : 0,
-              backgroundColor: layoutbgcolor,
-            }}
-          >
-            {Routes[1].sub.map((button, i) => (
-              <Button
-                key={i}
-                href={button.path}
-                sx={ButtonStyle}
-                className="flex align-center justify-center"
-                onClick={setTopBarOn}
+          {Routes[1].sub.map((button, i) => (
+            <Button
+              key={i}
+              href={button.path}
+              sx={ButtonStyle}
+              className="flex align-center justify-center"
+              onClick={setTopBarOn}
+              style={{
+                textTransform: "none",
+              }}
+            >
+              <div
                 style={{
-                  textTransform: "none",
+                  fontFamily: AppFont,
+                  color: layouttextcolor,
+                  fontWeight: "bold",
+                  fontSize: isResponsiveSize ? "7pt" : "10pt",
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: AppFont,
-                    color: layouttextcolor,
-                    fontWeight: "bold",
-                    fontSize: isResponsiveSize ? "7pt" : "10pt",
-                  }}
-                >
-                  {button.name}
-                </div>
-              </Button>
-            ))}
-          </AccordionDetails>
-        </Slide>
-      </Accordion>
-      <Accordion
-        sx={{
-          backgroundColor: "transparent",
-          boxShadow: "none",
+                {button.name}
+              </div>
+            </Button>
+          ))}
+        </AccordionDetails>
+      </Slide>
+    </Accordion>
+  );
+};
+
+const DealsButton = ({setTopBarOn}) => {
+  const size = Size();
+  const isResponsiveSize = ["XS", "SM", "MD", "L"].includes(size);
+  const [subMOn, setSubMOn] = useState(false);
+
+  return (
+    <Accordion
+      sx={{
+        backgroundColor: "transparent",
+        boxShadow: "none",
+      }}
+    >
+      <div className="flex align-center justify-center">
+        <AccordionSummary
+          onClick={() => setSubMOn(!subMOn)}
+          style={{
+            color: layouttextcolor,
+            fontSize: isResponsiveSize ? "7pt" : "10pt",
+            fontFamily: AppFont,
+            fontWeight: "bold",
+          }}
+          sx={{ boxShadow: "none" }}
+        >
+          {Routes[2].name}
+        </AccordionSummary>
+      </div>
+      <Slide
+        in={isResponsiveSize ? subMOn : true}
+        direction="down"
+        easing={{
+          enter: "cubic-bezier(0, 1.5, .8, 1)",
+          exit: "ease",
         }}
       >
-        <div className="flex align-center justify-center">
-          <AccordionSummary
-            onClick={() => setSubMOn(!subMOn)}
-            style={{
-              color: layouttextcolor,
-              fontSize: isResponsiveSize ? "7pt" : "10pt",
-              fontFamily: AppFont,
-              fontWeight: "bold",
-            }}
-            sx={{ boxShadow: "none" }}
-          >
-            {Routes[2].name}
-          </AccordionSummary>
-        </div>
-        <Slide
-          in={isResponsiveSize ? subMOn : true}
-          direction="down"
-          easing={{
-            enter: "cubic-bezier(0, 1.5, .8, 1)",
-            exit: "ease",
+        <AccordionDetails
+          className="grid grid-flow-row gap-1 mt-1 rounded-md"
+          sx={{
+            boxShadow: "none",
+            position: isResponsiveSize ? "fixed" : "inherit",
+            marginTop: isResponsiveSize ? "10pt" : 0,
+            backgroundColor: layoutbgcolor,
           }}
         >
-          <AccordionDetails
-            className="grid grid-flow-row gap-1 mt-1 rounded-md"
-            sx={{
-              boxShadow: "none",
-              position: isResponsiveSize ? "fixed" : "inherit",
-              marginTop: isResponsiveSize ? "10pt" : 0,
-              backgroundColor: layoutbgcolor,
-            }}
-          >
-            {Routes[2].sub.map((button, i) => (
-              <Button
-                key={i}
-                href={button.path}
-                sx={ButtonStyle}
-                className="flex align-center justify-center"
-                onClick={setTopBarOn}
+          {Routes[2].sub.map((button, i) => (
+            <Button
+              key={i}
+              href={button.path}
+              sx={ButtonStyle}
+              className="flex align-center justify-center"
+              onClick={setTopBarOn}
+              style={{
+                textTransform: "none",
+              }}
+            >
+              <div
                 style={{
-                  textTransform: "none",
+                  fontFamily: AppFont,
+                  color: layouttextcolor,
+                  fontWeight: "bold",
+                  fontSize: isResponsiveSize ? "7pt" : "10pt",
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: AppFont,
-                    color: layouttextcolor,
-                    fontWeight: "bold",
-                    fontSize: isResponsiveSize ? "7pt" : "10pt",
-                  }}
-                >
-                  {button.name}
-                </div>
-              </Button>
-            ))}
-          </AccordionDetails>
-        </Slide>
-      </Accordion>
-    </>
+                {button.name}
+              </div>
+            </Button>
+          ))}
+        </AccordionDetails>
+      </Slide>
+    </Accordion>
   );
 };
 
@@ -178,7 +187,11 @@ export const SideBar = ({ setTopBarOn }) => {
           {Routes[0].name}
         </div>
       </Button>
-      <ShopByDeppartment
+      <DepartmentButton
+        setTopBarOn={setTopBarOn}
+        isResponsiveSize={isResponsiveSize}
+      />
+      <DealsButton
         setTopBarOn={setTopBarOn}
         isResponsiveSize={isResponsiveSize}
       />
