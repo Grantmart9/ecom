@@ -28,7 +28,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             onClick={() => setSubMOn(!subMOn)}
             style={{
               color: layouttextcolor,
-              fontSize: isResponsiveSize ? "4pt" : "10pt",
+              fontSize: isResponsiveSize ? "7pt" : "10pt",
               fontFamily: AppFont,
               fontWeight: "bold",
             }}
@@ -50,6 +50,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             sx={{
               boxShadow: "none",
               position: isResponsiveSize ? "fixed" : "inherit",
+              marginTop: isResponsiveSize ? "22pt" : 0,
               backgroundColor: layoutbgcolor,
             }}
           >
@@ -69,7 +70,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
                     fontFamily: AppFont,
                     color: layouttextcolor,
                     fontWeight: "bold",
-                    fontSize: isResponsiveSize ? "5pt" : "10pt",
+                    fontSize: isResponsiveSize ? "7pt" : "10pt",
                   }}
                 >
                   {button.name}
@@ -90,7 +91,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             onClick={() => setSubMOn(!subMOn)}
             style={{
               color: layouttextcolor,
-              fontSize: isResponsiveSize ? "5pt" : "10pt",
+              fontSize: isResponsiveSize ? "7pt" : "10pt",
               fontFamily: AppFont,
               fontWeight: "bold",
             }}
@@ -112,6 +113,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
             sx={{
               boxShadow: "none",
               position: isResponsiveSize ? "fixed" : "inherit",
+              marginTop: isResponsiveSize ? "10pt" : 0,
               backgroundColor: layoutbgcolor,
             }}
           >
@@ -131,7 +133,7 @@ const ShopByDeppartment = ({ setTopBarOn, isResponsiveSize }) => {
                     fontFamily: AppFont,
                     color: layouttextcolor,
                     fontWeight: "bold",
-                    fontSize: isResponsiveSize ? "5pt" : "10pt",
+                    fontSize: isResponsiveSize ? "7pt" : "10pt",
                   }}
                 >
                   {button.name}
@@ -170,7 +172,7 @@ export const SideBar = ({ setTopBarOn }) => {
             fontFamily: AppFont,
             color: layouttextcolor,
             fontWeight: "bold",
-            fontSize: isResponsiveSize ? "5pt" : "10pt",
+            fontSize: isResponsiveSize ? "7pt" : "10pt",
           }}
         >
           {Routes[0].name}
@@ -193,7 +195,7 @@ export const SideBar = ({ setTopBarOn }) => {
             fontFamily: AppFont,
             color: layouttextcolor,
             fontWeight: "bold",
-            fontSize: isResponsiveSize ? "5pt" : "10pt",
+            fontSize: isResponsiveSize ? "7pt" : "10pt",
           }}
         >
           {Routes[3].name}

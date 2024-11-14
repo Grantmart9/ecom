@@ -88,7 +88,7 @@ export const Routes = [
   { path: "/home", name: "Home" },
   {
     path: "/shop",
-    name: "Shop By Deppartment",
+    name: "Products",
     sub: [
       { path: "/women", name: "Women" },
       { path: "/men", name: "Men" },
