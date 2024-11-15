@@ -57,12 +57,6 @@ export const ServicesSubMain = ({ topBarOn }) => {
       }}
     >
       <div
-        style={{ color: textcolor }}
-        className="text-2xl font-bold text-center justify-center pb-5"
-      >
-        Products
-      </div>
-      <div
         className={`grid grid-${isResponsiveSize ? "rows-1" : "cols-3"} gap-2`}
       >
         {ServiceList.map((service, i) => (
