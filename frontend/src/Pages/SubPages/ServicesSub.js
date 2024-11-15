@@ -54,20 +54,13 @@ export const ServicesSubMain = ({ topBarOn }) => {
         backgroundColor: pagebgcolor,
         paddingLeft: "10pt",
         paddingRight: "10pt",
-        paddingTop: topBarOn
-          ? isResponsiveSize
-            ? "50pt"
-            : "80pt"
-          : isResponsiveSize
-          ? "50pt"
-          : "80pt",
       }}
     >
       <div
         style={{ color: textcolor }}
         className="text-2xl font-bold text-center justify-center pb-5"
       >
-        Services
+        Products
       </div>
       <div
         className={`grid grid-${isResponsiveSize ? "rows-1" : "cols-3"} gap-2`}

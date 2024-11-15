@@ -41,24 +41,24 @@ export const SocialMediaLinks = [
 // Service List //
 export const ServiceList = [
   {
-    service: "Custom Web Application Development",
+    service: "CHUCKLES® Malted Puffs in Milk Chocolate Bulk Pack 250 g",
     image: I1,
-    text: "Elevate your business with a custom-built web application tailored specifically for your needs. Our team develops full-featured web solutions that blend beautiful front-end design with powerful back-end functionality, making every user interaction seamless and efficient. We handle every aspect, from user-friendly interfaces to secure server architecture, ensuring your application not only looks great but also performs reliably across all devices. Get a scalable, custom solution that grows alongside your business and adapts to the latest technology.",
+    text: "R 3250,99",
   },
   {
-    service: "Mobile App Development",
+    service: "CHUCKLES® Peanuts in Milk Chocolate 150 g",
     image: I2,
-    text: "Connect with your audience anytime, anywhere with a custom mobile app. Whether you’re targeting iOS, Android, or both, we create mobile experiences that engage users on the go. Our full-stack expertise covers every stage of app development, from UX/UI design to backend integration, to ensure your app is responsive, fast, and user-friendly. By leveraging the latest in mobile frameworks, we offer quick, cost-effective solutions that give you a direct channel to interact with customers and build loyalty.",
+    text: "R 3958,99",
   },
   {
-    service: "E-commerce Development",
+    service: "Lindt Les Grandes 34 % Hazelnut Dark Chocolate 150 g",
     image: I3,
-    text: "Transform your business with a high-performance, visually captivating online store. Our e-commerce solutions are designed to convert visitors into loyal customers by offering a smooth and secure shopping experience. We cover every detail, from sleek product displays to secure payment gateways and efficient order management systems. Our e-commerce solutions are built to scale, keeping your store fast, reliable, and secure as you grow. Let us help you set up a powerful online storefront that boosts your brand and drives revenue.",
+    text: "R 389,99",
   },
   {
-    service: "Cloud-Based Solutions and Hosting",
+    service: "Dark Chocolate Cocoa Dusted Truffles 170 g",
     image: I4,
-    text: "Embrace the cloud with confidence. We offer cloud-based solutions that improve accessibility, collaboration, and cost-efficiency, freeing you from the burden of on-premises infrastructure. Our team handles everything, from building and deploying applications on platforms like AWS or Azure to ongoing server management. We ensure your applications are secure, reliable, and capable of handling any demand, so your business can operate smoothly in the digital age. Scale seamlessly with the power of the cloud.",
+    text: "R 376,99",
   },
 ];
 

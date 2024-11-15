@@ -11,10 +11,11 @@ import { PageFooter } from "components/Display/PageFooter";
 import { ServicesSub } from "Pages/SubPages/ServicesSub";
 import { Button } from "@mui/material";
 import { Enquire } from "./SubPages/Enquire";
-import I1 from "Images/I1.jpg";
-import I2 from "Images/I2.jpg";
-import I3 from "Images/I3.jpeg";
-import I6 from "Images/I4.jpg";
+import Ad1 from "Images/ad1.png";
+import Ad2 from "Images/ad2.png";
+import Ad3 from "Images/ad3.png";
+import Ad4 from "Images/ad4.png";
+import { ServicesSubMain } from "Pages/SubPages/ServicesSub";
 
 const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
   return (
@@ -31,37 +32,16 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
     >
       <div className="grid grid-flow-col gap-0 p-2">
         <Button sx={{ padding: 0 }}>
-          <img src={I1} />
+          <img src={Ad1} />
         </Button>
         <Button sx={{ padding: 0 }}>
-          <img src={I2} />
+          <img src={Ad2} />
         </Button>
         <Button sx={{ padding: 0 }}>
-          <img src={I3} />
+          <img src={Ad3} />
         </Button>
         <Button sx={{ padding: 0 }}>
-          <img src={I6} />
-        </Button>
-      </div>
-    </div>
-  );
-};
-
-const DynamicAdvert = ({ isResponsiveSize, topBarOn }) => {
-  return (
-    <div>
-      <div className="grid grid-flow-col gap-0 p-2">
-        <Button sx={{ padding: 0 }}>
-          <img src={I1} />
-        </Button>
-        <Button sx={{ padding: 0 }}>
-          <img src={I2} />
-        </Button>
-        <Button sx={{ padding: 0 }}>
-          <img src={I3} />
-        </Button>
-        <Button sx={{ padding: 0 }}>
-          <img src={I6} />
+          <img src={Ad4} />
         </Button>
       </div>
     </div>
@@ -96,10 +76,7 @@ export const Landing = ({ topBarOn }) => {
         }}
       >
         <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
-        <DynamicAdvert
-          topBarOn={topBarOn}
-          isResponsiveSize={isResponsiveSize}
-        />
+        <ServicesSubMain />
       </div>
       <div
         style={{
