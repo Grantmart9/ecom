@@ -14,7 +14,6 @@ export const PageFooter = () => {
       }}
       className="grid sm:grid-cols-3 gap-2"
     >
-      <AboutUs />
       <SocialMediaIcons />
       <ContactUs />
     </div>
