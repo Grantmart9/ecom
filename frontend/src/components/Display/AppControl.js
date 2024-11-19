@@ -23,13 +23,13 @@ export const AppFont = "Roboto, sans-serif";
 export const ButtonStyle = { bgcolor: layoutbgcolor, color: layouttextcolor };
 
 // Add company details here //
-export const CompanyName = "CloudCraft";
+export const CompanyName = "ecom";
 
 export const CompanyTel = "+ 27 61 417 0615";
 
-export const CompanyAddrr = "19 Ralph Crescent, Kuilsriver, Cape Town";
+export const CompanyAddrr = "123 Church street, Kuilsriver";
 
-export const CompanyEmail = "cloudcraftEnquire.co.za";
+export const CompanyEmail = "ecom.co.za";
 
 export const SocialMediaLinks = [
   { path: "https://instagram.com/johndoe" },
