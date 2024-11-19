@@ -4,6 +4,7 @@ import { TextField } from "@mui/material";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
 import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
 
 export const Login = ({ topBarOn }) => {
   const size = Size();
@@ -48,7 +49,7 @@ export const Login = ({ topBarOn }) => {
         >
           <Card
             style={{ maxWidth: "300pt", backgroundColor: "#3d3d3d" }}
-            className="grid grid-rows-2 gap-2 p-4 mx-auto"
+            className="grid grid-flow-row gap-2 p-4 mx-auto"
           >
             <TextField
               style={{ backgroundColor: "whitesmoke" }}
@@ -60,6 +61,34 @@ export const Login = ({ topBarOn }) => {
               className="rounded-md"
               label="password"
             />
+            <div style={{ color: "whitesmoke" }} className="text-center">
+             Do you have an account ?
+            </div>
+            <Button
+              style={{
+                backgroundColor: "black",
+                color: "white",
+                textTransform: "none",
+                paddingBottom: "5pt",
+                paddingTop: "5pt",
+              }}
+            >
+              Login
+            </Button>
+            <div style={{ color: "whitesmoke" }} className="text-center">
+              or
+            </div>
+            <Button
+              style={{
+                backgroundColor: "black",
+                color: "white",
+                textTransform: "none",
+                paddingTop: "5pt",
+                paddingBottom: "5pt",
+              }}
+            >
+              Register
+            </Button>
             <div className="flex mx-auto">
               <GoogleLogin
                 shape="circle"
