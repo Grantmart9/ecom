@@ -1,8 +1,8 @@
 {
-  "name": "cloudcraft",
+  "name": "ecom",
   "description": "Company Website",
   "author": "Grant Marthinus",
-  "homepage": "http://cloudcraft.co.za",
+  "homepage": "http://ecom.co.za",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
