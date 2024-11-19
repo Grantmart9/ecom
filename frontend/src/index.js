@@ -9,15 +9,6 @@ import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import { ScreenLayout } from "components/Display/Screenlayout";
 import { PrimeReactProvider } from "primereact/api";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import { GoogleLogin } from "@react-oauth/google";
-
-const responseMessage = (response) => {
-  console.log(response);
-};
-const errorMessage = (error) => {
-  console.log(error);
-};
 
 // Make sure to get the root DOM element
 const rootElement = document.getElementById("root");
@@ -25,14 +16,11 @@ const rootElement = document.getElementById("root");
 if (rootElement) {
   // If rootElement exists, render the app
   ReactDOM.createRoot(rootElement).render(
-    <GoogleOAuthProvider clientId="354290078403-722jlc89r06hil9gckd81lco4ln39bdi.apps.googleusercontent.com">
-      <PrimeReactProvider>
-        <BrowserRouter>
-          <ScreenLayout />
-          <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
-        </BrowserRouter>
-      </PrimeReactProvider>
-    </GoogleOAuthProvider>
+    <PrimeReactProvider>
+      <BrowserRouter>
+        <ScreenLayout />
+      </BrowserRouter>
+    </PrimeReactProvider>
   );
 } else {
   console.error(
