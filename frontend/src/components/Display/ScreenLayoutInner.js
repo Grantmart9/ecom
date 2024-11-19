@@ -4,6 +4,7 @@ import { Landing } from "Pages/Landing";
 import { Contact } from "Pages/Contact";
 import { Products } from "Pages/Products";
 import { Routes } from "components/Display/AppControl";
+import { Login } from "Pages/Login";
 
 export const ScreenLayoutInner = ({ topBarOn }) => {
   return (
@@ -17,6 +18,9 @@ export const ScreenLayoutInner = ({ topBarOn }) => {
         </Route>
         <Route path={Routes[3].path}>
           <Contact topBarOn={topBarOn} />
+        </Route>
+        <Route path="/Login">
+          <Login topBarOn={topBarOn} />
         </Route>
         <Route path="/">
           <Landing topBarOn={topBarOn} />

@@ -8,20 +8,31 @@ import {
   textcolor,
 } from "components/Display/AppControl";
 import { PageFooter } from "components/Display/PageFooter";
-import { Button } from "@mui/material";
+import { Button, ImageList } from "@mui/material";
 import Ad1 from "Images/ad1.png";
 import Ad2 from "Images/ad2.png";
 import Ad3 from "Images/ad3.png";
 import Ad4 from "Images/ad4.png";
 import { ProductsSub } from "./Products";
-import { motion } from "motion/react";
+import { motion, stagger } from "motion/react";
 
 const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
+  const ImageList = [Ad1, Ad2, Ad3, Ad4];
   const scale = 1.05;
-  const isVisible = false;
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerDirection: -1,
+      },
+    },
+  };
   return (
     <div
-      className="grid grid-cols-4 gap-0 px-3"
+      className="px-3"
       style={{
         paddingTop: topBarOn
           ? isResponsiveSize
@@ -32,42 +43,28 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
           : "55pt",
       }}
     >
-      <motion.div
-        whileHover={{ scale: scale }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 40 }}
+      <motion.ul
+        className="grid grid-cols-4 gap-1"
+        variants={container}
+        initial="hidden"
+        animate="show"
       >
-        <Button sx={{ padding: 0 }}>
-          <img src={Ad1} />
-        </Button>
-      </motion.div>
-      <motion.div
-        whileHover={{ scale: scale }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 40 }}
-      >
-        <Button sx={{ padding: 0 }}>
-          <img src={Ad2} />
-        </Button>
-      </motion.div>
-      <motion.div
-        whileHover={{ scale: scale }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 40 }}
-      >
-        <Button sx={{ padding: 0 }}>
-          <img src={Ad3} />
-        </Button>
-      </motion.div>
-      <motion.div
-        whileHover={{ scale: scale }}
-        whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 400, damping: 40 }}
-      >
-        <Button sx={{ padding: 0 }}>
-          <img src={Ad4} />
-        </Button>
-      </motion.div>
+        {ImageList.map((item, i) => (
+          <motion.li
+            whileHover={{ scale: scale }}
+            whileTap={{ scale: 0.9 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 40,
+            }}
+            key={i}
+            variants={item}
+          >
+            <img src={item} />
+          </motion.li>
+        ))}
+      </motion.ul>
     </div>
   );
 };
@@ -95,11 +92,19 @@ export const Landing = ({ topBarOn }) => {
     >
       <div
         style={{
-          zIndex: 2,
+          zIndex: 3,
           width: "100%",
         }}
       >
         <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
+      </div>
+      <div
+        style={{
+          zIndex: 2,
+          width: "100%",
+          paddingTop: "10pt",
+        }}
+      >
         <ProductsSub topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
       </div>
       <div

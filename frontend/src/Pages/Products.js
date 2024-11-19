@@ -20,6 +20,7 @@ export const ProductsSub = ({ topBarOn }) => {
         paddingLeft: "10pt",
         paddingRight: "10pt",
         paddingBottom: "10pt",
+        zIndex:1
       }}
     >
       <div
