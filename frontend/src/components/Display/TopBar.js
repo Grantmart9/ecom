@@ -10,102 +10,108 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import SearchIcon from "@mui/icons-material/Search";
 import { TextField } from "@mui/material";
+import Fade from "@mui/material/Fade";
 
 export const TopBar = ({ setTopBarOn }) => {
   var size = Size();
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
   return (
-    <AppBar
-      position="fixed"
-      elevation={1}
-      sx={{
-        backgroundColor: layoutbgcolor,
-      }}
-    >
-      {isResponsiveSize ? (
-        <Toolbar disableGutters>
-          <div
-            style={{ marginLeft: "45px" }}
-            className="grid grid-cols-3 gap-10 p-1"
-          >
-            <IconButton href={"/shoppingcart"}>
-              <ShoppingBasketIcon
-                sx={{ color: layouttextcolor }}
-                fontSize="medium"
-              />
-            </IconButton>
-            <IconButton href={"/accountsettings"}>
-              <AccountCircleIcon
-                sx={{ color: layouttextcolor }}
-                fontSize="medium"
-              />
-            </IconButton>
-          </div>
-          <Container></Container>
-          <IconButton
-            size="medium"
-            style={{ marginRight: "45px" }}
-            aria-label="menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={setTopBarOn}
-            color={textcolor}
-          >
-            <MenuIcon
-              style={{
-                color: layouttextcolor,
-              }}
-            />
-          </IconButton>
-        </Toolbar>
-      ) : (
-        <Toolbar disableGutters>
-          <IconButton
-            size="medium"
-            style={{ marginLeft: "80px" }}
-            aria-label="menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={setTopBarOn}
-            color={textcolor}
-          >
-            <MenuIcon
-              style={{
-                color: layouttextcolor,
-              }}
-            />
-          </IconButton>
-          <Container></Container>
-          <div
-            style={{ marginRight: "45px" }}
-            className="grid grid-flow-col gap-3 p-1"
-          >
-            <div className="inline-flex">
-              <TextField
-                color="warning"
-                sx={{ width: "25ch" }}
-                size="small"
-                variant="standard"
-              />
-              <IconButton>
-                <SearchIcon sx={{ color: layouttextcolor }} fontSize="medium" />
+    <Fade timeout={500} in={true}>
+      <AppBar
+        position="fixed"
+        elevation={1}
+        sx={{
+          backgroundColor: layoutbgcolor,
+        }}
+      >
+        {isResponsiveSize ? (
+          <Toolbar disableGutters>
+            <div
+              style={{ marginLeft: "45px" }}
+              className="grid grid-cols-3 gap-10 p-1"
+            >
+              <IconButton href={"/shoppingcart"}>
+                <ShoppingBasketIcon
+                  sx={{ color: layouttextcolor }}
+                  fontSize="medium"
+                />
+              </IconButton>
+              <IconButton href={"/accountsettings"}>
+                <AccountCircleIcon
+                  sx={{ color: layouttextcolor }}
+                  fontSize="medium"
+                />
               </IconButton>
             </div>
-            <IconButton href={"/shoppingcart"}>
-              <ShoppingBasketIcon
-                sx={{ color: layouttextcolor }}
-                fontSize="medium"
+            <Container></Container>
+            <IconButton
+              size="medium"
+              style={{ marginRight: "45px" }}
+              aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={setTopBarOn}
+              color={textcolor}
+            >
+              <MenuIcon
+                style={{
+                  color: layouttextcolor,
+                }}
               />
             </IconButton>
-            <IconButton href={"/accountsettings"}>
-              <AccountCircleIcon
-                sx={{ color: layouttextcolor }}
-                fontSize="medium"
+          </Toolbar>
+        ) : (
+          <Toolbar disableGutters>
+            <IconButton
+              size="medium"
+              style={{ marginLeft: "80px" }}
+              aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={setTopBarOn}
+              color={textcolor}
+            >
+              <MenuIcon
+                style={{
+                  color: layouttextcolor,
+                }}
               />
             </IconButton>
-          </div>
-        </Toolbar>
-      )}
-    </AppBar>
+            <Container></Container>
+            <div
+              style={{ marginRight: "45px" }}
+              className="grid grid-flow-col gap-3 p-1"
+            >
+              <div className="inline-flex">
+                <TextField
+                  color="warning"
+                  sx={{ width: "25ch" }}
+                  size="small"
+                  variant="standard"
+                />
+                <IconButton>
+                  <SearchIcon
+                    sx={{ color: layouttextcolor }}
+                    fontSize="medium"
+                  />
+                </IconButton>
+              </div>
+              <IconButton href={"/shoppingcart"}>
+                <ShoppingBasketIcon
+                  sx={{ color: layouttextcolor }}
+                  fontSize="medium"
+                />
+              </IconButton>
+              <IconButton href={"/accountsettings"}>
+                <AccountCircleIcon
+                  sx={{ color: layouttextcolor }}
+                  fontSize="medium"
+                />
+              </IconButton>
+            </div>
+          </Toolbar>
+        )}
+      </AppBar>
+    </Fade>
   );
 };

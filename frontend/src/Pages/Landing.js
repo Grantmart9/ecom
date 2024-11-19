@@ -14,34 +14,60 @@ import Ad2 from "Images/ad2.png";
 import Ad3 from "Images/ad3.png";
 import Ad4 from "Images/ad4.png";
 import { ProductsSub } from "./Products";
+import { motion } from "motion/react";
 
 const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
+  const scale = 1.05;
+  const isVisible = false;
   return (
     <div
+      className="grid grid-cols-4 gap-0 px-3"
       style={{
         paddingTop: topBarOn
           ? isResponsiveSize
-            ? "43pt"
-            : "48pt"
+            ? "55pt"
+            : "55pt"
           : isResponsiveSize
-          ? "43pt"
-          : "48pt",
+          ? "55pt"
+          : "55pt",
       }}
     >
-      <div className="grid grid-flow-col gap-0 p-2">
+      <motion.div
+        whileHover={{ scale: scale }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 40 }}
+      >
         <Button sx={{ padding: 0 }}>
           <img src={Ad1} />
         </Button>
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: scale }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 40 }}
+      >
         <Button sx={{ padding: 0 }}>
           <img src={Ad2} />
         </Button>
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: scale }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 40 }}
+      >
         <Button sx={{ padding: 0 }}>
           <img src={Ad3} />
         </Button>
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: scale }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 40 }}
+      >
         <Button sx={{ padding: 0 }}>
           <img src={Ad4} />
         </Button>
-      </div>
+      </motion.div>
     </div>
   );
 };
