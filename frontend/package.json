@@ -35,6 +35,7 @@
     "@nivo/tooltip": "^0.73.0",
     "@react-hook/media-query": "^1.1.1",
     "@react-hook/resize-observer": "^1.2.2",
+    "@react-oauth/google": "^0.12.1",
     "@smakss/react-scroll-direction": "^4.2.0",
     "@syncfusion/ej2-react-heatmap": "^19.3.43",
     "@themesberg/react-bootstrap": "^1.4.1",
