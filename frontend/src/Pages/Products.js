@@ -39,9 +39,7 @@ export const ProductsSub = ({ topBarOn }) => {
             }}
           >
             <Card key={i}>
-              <Button style={{ textTransform: "none" }}>
-                <img src={service.image} alt="No File" />
-              </Button>
+              <img src={service.image} alt="No File" />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {service.service}
