@@ -91,19 +91,22 @@ export const Landing = ({ topBarOn }) => {
       <motion.h1
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
-        transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+          delay: 1,
+          repeatType: "mirror",
+          repeat: 0,
+        }}
+        style={{
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          fontSize: isResponsiveSize ? "20pt" : "50pt",
+          fontWeight: "bold",
+        }}
+        className="flex text-center justify-center"
       >
-        <div
-          style={{
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "20pt" : "50pt",
-            fontWeight: "bold",
-          }}
-          className="flex text-center justify-center"
-        >
-          Check out our products !
-        </div>
+        Check out our products !
       </motion.h1>
       <div
         style={{
