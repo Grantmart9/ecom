@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import { pagebgcolor, textcolor } from "components/Display/AppControl";
 import { ServiceList } from "components/Display/AppControl";
 import Button from "@mui/material/Button";
+import { easeInOut, motion, stagger } from "motion/react";
 
 export const ProductsSub = ({ topBarOn }) => {
   const size = Size();
@@ -20,37 +21,60 @@ export const ProductsSub = ({ topBarOn }) => {
         paddingLeft: "10pt",
         paddingRight: "10pt",
         paddingBottom: "10pt",
-        zIndex:1
       }}
     >
       <div
         className={`grid grid-${isResponsiveSize ? "rows-1" : "cols-3"} gap-3`}
       >
         {ServiceList.map((service, i) => (
-          <Card key={i}>
-            <Button style={{ textTransform: "none" }}>
-              <img src={service.image} alt="No File" />
-            </Button>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {service.service}
-              </Typography>
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                {service.text}
-              </Typography>
-            </CardContent>
-            <CardActions className="flex align-center justify-center">
-              <Button
-                style={{
-                  backgroundColor: "black",
-                  color: "white",
-                  textTransform: "none",
-                }}
-              >
-                Add to Cart
+          <motion.h1
+            initial={{ opacity: "0%" }}
+            animate={{
+              opacity: [
+                "5%",
+                "10%",
+                "20%",
+                "30%",
+                "40%",
+                "50%",
+                "60%",
+                "70%",
+                "80%",
+                "90%",
+                "100%",
+              ],
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "linear",
+              delay: 2,
+            }}
+          >
+            <Card key={i}>
+              <Button style={{ textTransform: "none" }}>
+                <img src={service.image} alt="No File" />
               </Button>
-            </CardActions>
-          </Card>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {service.service}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                  {service.text}
+                </Typography>
+              </CardContent>
+              <CardActions className="flex align-center justify-center">
+                <Button
+                  style={{
+                    backgroundColor: "black",
+                    color: "white",
+                    textTransform: "none",
+                  }}
+                >
+                  Add to Cart
+                </Button>
+              </CardActions>
+            </Card>
+          </motion.h1>
         ))}
       </div>
     </div>

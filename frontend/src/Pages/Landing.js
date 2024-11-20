@@ -31,31 +31,29 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
     },
   };
   return (
-    <div className="mb-20">
-      <motion.ul
-        className="grid grid-cols-4"
-        variants={container}
-        initial={{ y: "0pt", opacity: 0 }}
-        animate={{ y: isResponsiveSize ? "43pt" : "50pt", opacity: 1 }}
-        transition={{ duration: 1, ease: "circIn" }}
-      >
-        {ImageList.map((item, i) => (
-          <motion.li
-            whileHover={{ scale: scale }}
-            whileTap={{ scale: 0.9 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 40,
-            }}
-            key={i}
-            variants={item}
-          >
-            <img src={item} />
-          </motion.li>
-        ))}
-      </motion.ul>
-    </div>
+    <motion.ul
+      className="grid grid-cols-4 mb-16"
+      variants={container}
+      initial={{ y: "0pt", opacity: 0 }}
+      animate={{ y: isResponsiveSize ? "43pt" : "50pt", opacity: 1 }}
+      transition={{ duration: 1, ease: "circIn" }}
+    >
+      {ImageList.map((item, i) => (
+        <motion.li
+          whileHover={{ scale: scale }}
+          whileTap={{ scale: 0.9 }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 40,
+          }}
+          key={i}
+          variants={item}
+        >
+          <img src={item} />
+        </motion.li>
+      ))}
+    </motion.ul>
   );
 };
 
@@ -101,12 +99,13 @@ export const Landing = ({ topBarOn }) => {
         style={{
           overflow: "hidden",
           whiteSpace: "nowrap",
-          fontSize: isResponsiveSize ? "20pt" : "50pt",
+          fontSize: isResponsiveSize ? "20pt" : "40pt",
           fontWeight: "bold",
+          fontFamily: AppFont,
         }}
-        className="flex text-center justify-center"
+        className="flex text-center justify-center "
       >
-        Check out our products !
+        Recently added
       </motion.h1>
       <div
         style={{
