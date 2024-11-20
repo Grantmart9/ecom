@@ -14,7 +14,7 @@ import Ad2 from "Images/ad2.png";
 import Ad3 from "Images/ad3.png";
 import Ad4 from "Images/ad4.png";
 import { ProductsSub } from "./Products";
-import { motion, stagger } from "motion/react";
+import { easeInOut, motion, stagger } from "motion/react";
 
 const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
   const ImageList = [Ad1, Ad2, Ad3, Ad4];
@@ -31,23 +31,13 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
     },
   };
   return (
-    <div
-      className="px-3"
-      style={{
-        paddingTop: topBarOn
-          ? isResponsiveSize
-            ? "55pt"
-            : "55pt"
-          : isResponsiveSize
-          ? "55pt"
-          : "55pt",
-      }}
-    >
+    <div className="mb-20">
       <motion.ul
-        className="grid grid-cols-4 gap-1"
+        className="grid grid-cols-4"
         variants={container}
-        initial="hidden"
-        animate="show"
+        initial={{ y: "0pt", opacity: 0 }}
+        animate={{ y: isResponsiveSize ? "43pt" : "50pt", opacity: 1 }}
+        transition={{ duration: 1, ease: "circIn" }}
       >
         {ImageList.map((item, i) => (
           <motion.li
@@ -98,14 +88,30 @@ export const Landing = ({ topBarOn }) => {
       >
         <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
       </div>
+      <motion.h1
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
+      >
+        <div
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "20pt" : "50pt",
+            fontWeight: "bold",
+          }}
+          className="flex text-center justify-center"
+        >
+          Check out our products !
+        </div>
+      </motion.h1>
       <div
         style={{
-          zIndex: 2,
+          zIndex: 4,
           width: "100%",
-          paddingTop: "10pt",
         }}
       >
-        <ProductsSub topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
+        <ProductsSub />
       </div>
       <div
         style={{
