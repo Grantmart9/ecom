@@ -1,24 +1,38 @@
 import React, { useEffect } from "react";
 import { Size } from "components/Display/media-query";
-import {
-  AppFont,
-  ButtonStyle,
-  CompanyName,
-  pagebgcolor,
-  textcolor,
-} from "components/Display/AppControl";
+import { AppFont } from "components/Display/AppControl";
 import { PageFooter } from "components/Display/PageFooter";
-import { Button, ImageList } from "@mui/material";
 import Ad1 from "Images/ad1.png";
 import Ad2 from "Images/ad2.png";
 import Ad3 from "Images/ad3.png";
 import Ad4 from "Images/ad4.png";
 import { ProductsSub } from "./Products";
-import { easeInOut, motion, stagger } from "motion/react";
+import { motion } from "framer-motion";
 
+// StaticAdvert component with stagger animation
 const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
   const ImageList = [Ad1, Ad2, Ad3, Ad4];
-  const scale = 1.05;
+
+  // Parent variant for stagger animation
+  const parentVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+  };
+
+  // Child variants for individual staggered animation
+  const itemVariants = {
+    initial: { opacity: 0, y: 20 }, // Start below
+    animate: (i) => ({
+      opacity: 1,
+      y: 0, // Move up to the final position
+      transition: {
+        delay: i * 0.3, // Delay for staggering
+        type: "spring",
+        stiffness: 100,
+        damping: 40,
+      },
+    }),
+  };
 
   return (
     <motion.ul
@@ -32,24 +46,20 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
           ? "42pt"
           : "47pt",
       }}
-      initial={{ opacity: 0 }}
-      delay={stagger(0.1)}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, type: "spring" }}
+      initial="initial"
+      animate="animate"
+      variants={parentVariants} // Parent animation for fade-in
+      transition={{ duration: 2, type: "spring" }}
     >
       {ImageList.map((item, i) => (
         <motion.li
-          whileHover={{ scale: scale }}
-          whileTap={{ scale: 0.9 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 40,
-          }}
           key={i}
-          variants={item}
+          variants={itemVariants} // Apply staggered child animation
+          custom={i} // Pass index for stagger delay calculation
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
         >
-          <img src={item} />
+          <img src={item} alt={`Ad ${i}`} />
         </motion.li>
       ))}
     </motion.ul>
@@ -60,6 +70,7 @@ export const Landing = ({ topBarOn }) => {
   var size = Size();
   const isResponsiveSize = ["XS", "SM", "MD", "L"].includes(size);
 
+  // Scroll to the top when the component is mounted
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);

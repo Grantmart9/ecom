@@ -5,10 +5,10 @@ import { CardActions } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { pagebgcolor, textcolor } from "components/Display/AppControl";
+import { pagebgcolor } from "components/Display/AppControl";
 import { ServiceList } from "components/Display/AppControl";
 import Button from "@mui/material/Button";
-import { motion } from "motion/react";
+import { motion } from "framer-motion"; // Use framer-motion for animations
 
 export const ProductsSub = ({ topBarOn }) => {
   const size = Size();
@@ -24,10 +24,14 @@ export const ProductsSub = ({ topBarOn }) => {
       }}
     >
       <div
-        className={`grid grid-${isResponsiveSize ? "rows-1" : "cols-3"} gap-3`}
+        className={`grid ${
+          isResponsiveSize ? "grid-cols-1" : "grid-cols-4"
+        } gap-3 min-h-full`}
       >
         {ServiceList.map((service, i) => (
-          <motion.h1
+          <motion.div
+            key={i}
+            className="flex flex-col min-h-full"
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
@@ -38,9 +42,9 @@ export const ProductsSub = ({ topBarOn }) => {
               delay: 1,
             }}
           >
-            <Card key={i}>
-              <img src={service.image} alt="No File" />
-              <CardContent>
+            <Card className="flex-grow">
+              <img src={service.image} alt="No File" className="w-full" />
+              <CardContent className="flex-grow">
                 <Typography gutterBottom variant="h5" component="div">
                   {service.service}
                 </Typography>
@@ -60,7 +64,7 @@ export const ProductsSub = ({ topBarOn }) => {
                 </Button>
               </CardActions>
             </Card>
-          </motion.h1>
+          </motion.div>
         ))}
       </div>
     </div>

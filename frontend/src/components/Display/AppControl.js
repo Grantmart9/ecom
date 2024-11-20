@@ -60,6 +60,26 @@ export const ServiceList = [
     image: I4,
     text: "R 376,99",
   },
+  {
+    service: "CHUCKLES® Malted Puffs in Milk Chocolate Bulk Pack 250 g",
+    image: I1,
+    text: "R 3250,99",
+  },
+  {
+    service: "CHUCKLES® Peanuts in Milk Chocolate 150 g",
+    image: I2,
+    text: "R 3958,99",
+  },
+  {
+    service: "Lindt Les Grandes 34 % Hazelnut Dark Chocolate 150 g",
+    image: I3,
+    text: "R 389,99",
+  },
+  {
+    service: "Dark Chocolate Cocoa Dusted Truffles 170 g",
+    image: I4,
+    text: "R 376,99",
+  },
 ];
 
 export const Routes = [
