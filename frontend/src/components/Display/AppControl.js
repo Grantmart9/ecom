@@ -87,24 +87,10 @@ export const Routes = [
   {
     path: "/shop",
     name: "Products",
-    sub: [
-      { path: "/products/all", name: "- All" },
-      { path: "/products/women", name: "- Women" },
-      { path: "/products/men", name: "- Men" },
-      { path: "/products/kids", name: "- Kids" },
-      { path: "/products/baby", name: "- Babies" },
-      { path: "/products/home", name: "- Home" },
-      { path: "/products/beauty", name: "- Beauty" },
-    ],
   },
   {
     path: "/deals",
     name: "Deals",
-    sub: [
-      { path: "/deals20", name: "- 20% off" },
-      { path: "/deals30", name: "- 30% off" },
-      { path: "/deals50", name: "- 40% off" },
-    ],
   },
   {
     path: "/contactus",

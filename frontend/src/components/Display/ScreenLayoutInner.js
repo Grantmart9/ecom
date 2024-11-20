@@ -10,10 +10,10 @@ export const ScreenLayoutInner = ({ topBarOn }) => {
   return (
     <div>
       <Switch>
-        <Route path={Routes[0].path}>
+        <Route path={"/home"}>
           <Landing topBarOn={topBarOn} />
         </Route>
-        <Route path={"/products"}>
+        <Route path={"/shop"}>
           <Products topBarOn={topBarOn} />
         </Route>
         <Route path={Routes[3].path}>
