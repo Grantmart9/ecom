@@ -32,10 +32,13 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
   };
   return (
     <motion.ul
-      className="grid grid-cols-4 mb-16"
+      className="grid grid-cols-4"
+      style={{
+        marginTop: topBarOn ? isResponsiveSize ? "0pt" : "47pt" : isResponsiveSize ? "42pt" : "47pt",
+      }}
       variants={container}
-      initial={{ y: "0pt", opacity: 0 }}
-      animate={{ y: isResponsiveSize ? "43pt" : "50pt", opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "circIn" }}
     >
       {ImageList.map((item, i) => (
@@ -66,26 +69,8 @@ export const Landing = ({ topBarOn }) => {
   }, []);
 
   return (
-    <div
-      className="block"
-      style={{
-        width: topBarOn
-          ? isResponsiveSize
-            ? "calc(100vw)"
-            : "calc(100vw - 200px)"
-          : isResponsiveSize
-          ? "calc(100vw)"
-          : "calc(100vw)",
-      }}
-    >
-      <div
-        style={{
-          zIndex: 3,
-          width: "100%",
-        }}
-      >
-        <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
-      </div>
+    <div>
+      <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
       <motion.h1
         initial={{ width: 0 }}
         animate={{ width: "100%" }}

@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { pagebgcolor, textcolor } from "components/Display/AppControl";
 import { ServiceList } from "components/Display/AppControl";
 import Button from "@mui/material/Button";
-import { easeInOut, motion, stagger } from "motion/react";
+import { motion } from "motion/react";
 
 export const ProductsSub = ({ topBarOn }) => {
   const size = Size();
@@ -30,23 +30,12 @@ export const ProductsSub = ({ topBarOn }) => {
           <motion.h1
             initial={{ opacity: "0%" }}
             animate={{
-              opacity: [
-                "5%",
-                "10%",
-                "20%",
-                "30%",
-                "40%",
-                "50%",
-                "60%",
-                "70%",
-                "80%",
-                "90%",
-                "100%",
-              ],
+              opacity: 1,
             }}
             transition={{
               duration: 0.5,
               ease: "linear",
+              type:"tween",
               delay: 2,
             }}
           >

@@ -162,9 +162,8 @@ export const SideBar = ({ setTopBarOn }) => {
 
   return (
     <div
-      className={`grid grid-${
-        isResponsiveSize ? "cols-4" : "row-span-1"
-      } gap-2 mt-${isResponsiveSize ? "16" : "20"} 
+      style={{ backgroundColor: "black" }}
+      className={`grid grid-${isResponsiveSize ? "cols-4" : "row-span-1"} gap-2 
       } px-2 pb-3 pt-2`}
     >
       <Button

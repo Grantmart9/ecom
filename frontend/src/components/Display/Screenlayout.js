@@ -5,6 +5,7 @@ import { SideBar } from "./SideBar";
 import { Slide } from "@mui/material";
 import { Size } from "components/Display/media-query";
 import { layoutbgcolor } from "./AppControl";
+import { motion } from "motion/react";
 
 export const ScreenLayout = () => {
   const size = Size();
@@ -15,7 +16,6 @@ export const ScreenLayout = () => {
   };
 
   const isResponsiveSize = ["XS", "SM", "MD", "L"].includes(size);
-  const isResponsiveSize2 = ["XS", "SM", "MD"].includes(size);
 
   return (
     <div
@@ -31,23 +31,20 @@ export const ScreenLayout = () => {
         <div>
           {isResponsiveSize ? (
             <div>
-              <Slide in={true} timeout={1200} direction={"down"}>
-                <div
-                  style={{
-                    position: "fixed",
-                    top: 0, // Ensure it's at the top of the viewport
-                    left: isResponsiveSize2 ? 10 : 23, // Align to the left edge
-                    right: isResponsiveSize2 ? 10 : 23, // Stretch to the right edge
-                    zIndex: 1000, // Ensure it’s on top of other content
-                    backgroundColor: layoutbgcolor,
-                  }}
-                >
-                  <SideBar setTopBarOn={toggleTopBar} />
-                </div>
-              </Slide>
-              <div>
-                <ScreenLayoutInner topBarOn={topBarOn} />
-              </div>
+              <motion.menu
+                initial={{ y: "-100%", marginTop: 0 }}
+                animate={{
+                  y: "0pt",
+                  marginTop: "30pt",
+                }}
+                transition={{
+                  duration: 2,
+                  type: "spring",
+                }}
+              >
+                <SideBar setTopBarOn={toggleTopBar} />
+              </motion.menu>
+              <ScreenLayoutInner topBarOn={topBarOn} />
             </div>
           ) : (
             <div>
