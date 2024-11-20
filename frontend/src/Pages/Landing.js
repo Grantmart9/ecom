@@ -20,26 +20,22 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
   const ImageList = [Ad1, Ad2, Ad3, Ad4];
   const scale = 1.05;
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.5,
-        staggerDirection: -1,
-      },
-    },
-  };
   return (
     <motion.ul
       className="grid grid-cols-4"
       style={{
-        marginTop: topBarOn ? isResponsiveSize ? "0pt" : "47pt" : isResponsiveSize ? "42pt" : "47pt",
+        marginTop: topBarOn
+          ? isResponsiveSize
+            ? "0pt"
+            : "47pt"
+          : isResponsiveSize
+          ? "42pt"
+          : "47pt",
       }}
-      variants={container}
       initial={{ opacity: 0 }}
+      delay={stagger(0.1)}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "circIn" }}
+      transition={{ duration: 1, type: "spring" }}
     >
       {ImageList.map((item, i) => (
         <motion.li
@@ -47,7 +43,7 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
           whileTap={{ scale: 0.9 }}
           transition={{
             type: "spring",
-            stiffness: 400,
+            stiffness: 100,
             damping: 40,
           }}
           key={i}

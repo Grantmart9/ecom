@@ -28,15 +28,14 @@ export const ProductsSub = ({ topBarOn }) => {
       >
         {ServiceList.map((service, i) => (
           <motion.h1
-            initial={{ opacity: "0%" }}
+            initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
             }}
             transition={{
               duration: 0.5,
-              ease: "linear",
-              type:"tween",
-              delay: 2,
+              type: "tween",
+              delay: 1,
             }}
           >
             <Card key={i}>
