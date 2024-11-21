@@ -12,7 +12,7 @@ import { motion } from "framer-motion"; // Use framer-motion for animations
 
 export const ProductsSub = ({ topBarOn }) => {
   const size = Size();
-  const isResponsiveSize = ["XS", "SM", "MD", "L"].includes(size);
+  const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
 
   return (
     <div
@@ -98,10 +98,10 @@ export const Products = ({ topBarOn }) => {
           width: "100%",
           paddingTop: topBarOn
             ? isResponsiveSize
-              ? "48pt"
+              ? "0pt"
               : "48pt"
             : isResponsiveSize
-            ? "48pt"
+            ? "45pt"
             : "48pt",
         }}
       >

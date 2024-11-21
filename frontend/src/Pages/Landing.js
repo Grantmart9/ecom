@@ -10,7 +10,10 @@ import { ProductsSub } from "./Products";
 import { motion } from "framer-motion";
 
 // StaticAdvert component with stagger animation
-const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
+const StaticAdvert = ({ topBarOn }) => {
+  var size = Size();
+  const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
+
   const ImageList = [Ad1, Ad2, Ad3, Ad4];
 
   // Parent variant for stagger animation
@@ -26,7 +29,7 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
       opacity: 1,
       y: 0, // Move up to the final position
       transition: {
-        delay: i * 0.3, // Delay for staggering
+        delay: i * 0.1, // Delay for staggering
         type: "spring",
         stiffness: 100,
         damping: 40,
@@ -35,34 +38,39 @@ const StaticAdvert = ({ isResponsiveSize, topBarOn }) => {
   };
 
   return (
-    <motion.ul
-      className="grid grid-cols-4"
-      style={{
-        marginTop: topBarOn
-          ? isResponsiveSize
-            ? "0pt"
-            : "47pt"
-          : isResponsiveSize
-          ? "42pt"
-          : "47pt",
-      }}
-      initial="initial"
-      animate="animate"
-      variants={parentVariants} // Parent animation for fade-in
-      transition={{ duration: 2, type: "spring" }}
-    >
-      {ImageList.map((item, i) => (
-        <motion.li
-          key={i}
-          variants={itemVariants} // Apply staggered child animation
-          custom={i} // Pass index for stagger delay calculation
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <img src={item} alt={`Ad ${i}`} />
-        </motion.li>
-      ))}
-    </motion.ul>
+    <div>
+      <motion.ul
+        className={`grid grid-${isResponsiveSize ? "cols-2" : "cols-4"} gap-1 
+    } px-2 pb-3 pt-4`}
+        initial="initial"
+        animate="animate"
+        style={{
+          marginTop: topBarOn
+            ? isResponsiveSize
+              ? "0pt"
+              : "47pt"
+            : isResponsiveSize
+            ? "42pt"
+            : "47pt",
+        }}
+        variants={parentVariants} // Parent animation for fade-in
+        transition={{ duration: 2, type: "spring" }}
+      >
+        {ImageList.map((item, i) => (
+          <motion.li
+            style={{ backgroundColor: "black", padding: 3 }}
+            className="rounded-sm"
+            key={i}
+            variants={itemVariants} // Apply staggered child animation
+            custom={i} // Pass index for stagger delay calculation
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <img src={item} alt={`Ad ${i}`} />
+          </motion.li>
+        ))}
+      </motion.ul>
+    </div>
   );
 };
 
@@ -78,27 +86,39 @@ export const Landing = ({ topBarOn }) => {
   return (
     <div>
       <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
-      <motion.h1
-        initial={{ width: 0 }}
-        animate={{ width: "100%" }}
-        transition={{
-          duration: 2,
-          ease: "easeInOut",
-          delay: 1,
-          repeatType: "mirror",
-          repeat: 0,
-        }}
+      <div
         style={{
-          overflow: "hidden",
-          whiteSpace: "nowrap",
-          fontSize: isResponsiveSize ? "20pt" : "40pt",
-          fontWeight: "bold",
-          fontFamily: AppFont,
+          backgroundColor: "black",
+          color: "whitesmoke",
+          marginLeft: "7pt",
+          marginRight: "7pt",
         }}
-        className="flex text-center justify-center "
+        className="flex align-center justify-center"
       >
-        Recently added
-      </motion.h1>
+        <motion.h1
+          initial={{ width: "0%" }}
+          animate={{
+            width: "100%",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: "10",
+            damping: "1",
+            delay: 0.5,
+          }}
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "20pt" : "40pt",
+            fontWeight: "bold",
+            fontFamily: AppFont,
+          }}
+          className="flex text-center justify-center "
+        >
+          Recently added
+        </motion.h1>
+      </div>
       <div
         style={{
           zIndex: 4,
