@@ -70,8 +70,8 @@ export const ProductsSub = ({ topBarOn }) => {
                 variants={itemVariants} // Apply staggered child animation
                 custom={i} // Pass index for stagger delay calculation
                 delay={3}
-                whileHover={{ scale: 1.21 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.045 }}
+                whileTap={{ scale: 0.94 }}
               >
                 <img src={service.image} alt="No File" className="w-full" />
               </motion.li>

@@ -66,7 +66,7 @@ const StaticAdvert = ({ topBarOn }) => {
             variants={itemVariants} // Apply staggered child animation
             custom={i} // Pass index for stagger delay calculation
             delay={3}
-            whileHover={{ scale: 1.045 }}
+            whileHover={{ scale: 1.043 }}
             whileTap={{ scale: 0.97 }}
           >
             <img src={item} alt={`Ad ${i}`} />
@@ -74,35 +74,6 @@ const StaticAdvert = ({ topBarOn }) => {
         ))}
       </motion.ul>
     </div>
-  );
-};
-
-const Banner = ({ isResponsiveSize }) => {
-  return (
-    <motion.div
-      initial={{ width: "0%" }}
-      animate={{
-        width: "100%",
-      }}
-      transition={{
-        duration: 3,
-        type: "spring",
-        stiffness: 10,
-        damping: 4,
-        delay: 2.3,
-      }}
-      style={{
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        fontSize: isResponsiveSize ? "14pt" : "20pt",
-        fontWeight: "lighter",
-        fontFamily: AppFont,
-        color: "whitesmoke",
-      }}
-      className="flex text-center justify-center"
-    >
-      RECENTLY ADDED
-    </motion.div>
   );
 };
 
@@ -118,27 +89,36 @@ export const Landing = ({ topBarOn }) => {
   return (
     <div>
       <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
-      <motion.div
-        style={{
-          backgroundColor: "black",
-          padding: 3,
-        }}
-        className="flex align-center justify-center rounded-lg"
-        initial={{ width: "0%" }}
-        animate={{
-          width: "98.6%",
-          marginLeft: "7pt",
-        }}
-        transition={{
-          duration:4,
-          type: "spring",
-          stiffness: 300,
-          damping: 30,
-          delay: 0.2,
-        }}
+      <div
+        style={{ width: "100%", marginBottom: "10pt" }}
+        className="flex text-center justify-center"
       >
-        <Banner isResponsiveSize={isResponsiveSize} />
-      </motion.div>
+        <motion.div
+          initial={{ width: "0%", backgroundColor: "transparent" }}
+          animate={{
+            width: "50%",
+            backgroundColor: "black",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            delay: 0.4,
+          }}
+          className="rounded-sm shadow-md"
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "14pt" : "20pt",
+            fontWeight: "lighter",
+            fontFamily: AppFont,
+            color: "whitesmoke",
+          }}
+        >
+          RECENTLY ADDED
+        </motion.div>
+      </div>
       <div
         style={{
           zIndex: 4,
