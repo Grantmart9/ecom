@@ -18,9 +18,9 @@ export const ProductsSub = ({ topBarOn }) => {
     <div
       style={{
         backgroundColor: pagebgcolor,
-        paddingLeft: "10pt",
-        paddingRight: "10pt",
-        paddingBottom: "10pt",
+        paddingLeft: "7pt",
+        paddingRight: "7pt",
+        paddingBottom: "7pt",
       }}
     >
       <div

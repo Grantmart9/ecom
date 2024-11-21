@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 const StaticAdvert = ({ topBarOn }) => {
   var size = Size();
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
+  const isResponsiveSize2 = ["XS", "SM", "MD", "L"].includes(size);
 
   const ImageList = [Ad1, Ad2, Ad3, Ad4];
 
@@ -31,8 +32,8 @@ const StaticAdvert = ({ topBarOn }) => {
       transition: {
         delay: i * 0.1, // Delay for staggering
         type: "spring",
-        stiffness: 100,
-        damping: 40,
+        stiffness: 10,
+        damping: 4,
       },
     }),
   };
@@ -47,6 +48,8 @@ const StaticAdvert = ({ topBarOn }) => {
         style={{
           marginTop: topBarOn
             ? isResponsiveSize
+              ? "0pt"
+              : isResponsiveSize2
               ? "0pt"
               : "47pt"
             : isResponsiveSize
@@ -86,14 +89,23 @@ export const Landing = ({ topBarOn }) => {
   return (
     <div>
       <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
-      <div
+      <motion.div
         style={{
           backgroundColor: "black",
           color: "whitesmoke",
           marginLeft: "7pt",
           marginRight: "7pt",
+          marginBottom: "7pt",
         }}
         className="flex align-center justify-center"
+        initial={{ opacity: "0%" }}
+        animate={{
+          opacity: "100%",
+        }}
+        transition={{
+          duration: 2,
+          delay: 0.5,
+        }}
       >
         <motion.h1
           initial={{ width: "0%" }}
@@ -105,7 +117,7 @@ export const Landing = ({ topBarOn }) => {
             type: "spring",
             stiffness: "10",
             damping: "1",
-            delay: 0.5,
+            delay: 1,
           }}
           style={{
             overflow: "hidden",
@@ -118,7 +130,7 @@ export const Landing = ({ topBarOn }) => {
         >
           Recently added
         </motion.h1>
-      </div>
+      </motion.div>
       <div
         style={{
           zIndex: 4,
