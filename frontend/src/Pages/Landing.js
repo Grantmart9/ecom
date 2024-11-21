@@ -25,14 +25,14 @@ const StaticAdvert = ({ topBarOn }) => {
 
   // Child variants for individual staggered animation
   const itemVariants = {
-    initial: { y: 30 }, // Start below
+    initial: { y: 15 }, // Start below
     animate: (i) => ({
       y: 0, // Move up to the final position
       transition: {
-        delay: i * 0.35, // Delay for staggering
+        delay: i * 0.21, // Delay for staggering
         type: "spring",
-        stiffness: 10,
-        damping: 4,
+        stiffness: 100,
+        damping: 3.6,
       },
     }),
   };
@@ -56,7 +56,7 @@ const StaticAdvert = ({ topBarOn }) => {
             : "47pt",
         }}
         variants={parentVariants} // Parent animation for fade-in
-        transition={{ duration: 2, type: "spring" }}
+        transition={{ duration: 1, type: "spring" }}
       >
         {ImageList.map((item, i) => (
           <motion.li
@@ -65,6 +65,7 @@ const StaticAdvert = ({ topBarOn }) => {
             key={i}
             variants={itemVariants} // Apply staggered child animation
             custom={i} // Pass index for stagger delay calculation
+            delay={3}
             whileHover={{ scale: 1.045 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -88,7 +89,7 @@ const Banner = ({ isResponsiveSize }) => {
         type: "spring",
         stiffness: 10,
         damping: 4,
-        delay: 1,
+        delay: 2.3,
       }}
       style={{
         overflow: "hidden",
@@ -96,6 +97,7 @@ const Banner = ({ isResponsiveSize }) => {
         fontSize: isResponsiveSize ? "14pt" : "20pt",
         fontWeight: "lighter",
         fontFamily: AppFont,
+        color: "whitesmoke",
       }}
       className="flex text-center justify-center"
     >
@@ -119,19 +121,20 @@ export const Landing = ({ topBarOn }) => {
       <motion.div
         style={{
           backgroundColor: "black",
-          color: "whitesmoke",
-          marginLeft: "7pt",
-          marginRight: "7pt",
-          marginBottom: "7pt",
+          padding: 3,
         }}
-        className="flex align-center justify-center rounded-t-sm"
-        initial={{ opacity: "0%" }}
+        className="flex align-center justify-center rounded-lg"
+        initial={{ width: "0%" }}
         animate={{
-          opacity: "100%",
+          width: "98.6%",
+          marginLeft: "7pt",
         }}
         transition={{
-          duration: 2,
-          delay: 0.5,
+          duration:4,
+          type: "spring",
+          stiffness: 300,
+          damping: 30,
+          delay: 0.2,
         }}
       >
         <Banner isResponsiveSize={isResponsiveSize} />

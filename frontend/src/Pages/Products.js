@@ -14,6 +14,26 @@ export const ProductsSub = ({ topBarOn }) => {
   const size = Size();
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
 
+  // Parent variant for stagger animation
+  const parentVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+  };
+
+  // Child variants for individual staggered animation
+  const itemVariants = {
+    initial: { y: 25 }, // Start below
+    animate: (i) => ({
+      y: 0, // Move up to the final position
+      transition: {
+        delay: i * 0.21, // Delay for staggering
+        type: "spring",
+        stiffness: 100,
+        damping: 3.6,
+      },
+    }),
+  };
+
   return (
     <div
       style={{
@@ -29,21 +49,32 @@ export const ProductsSub = ({ topBarOn }) => {
         } gap-3 min-h-full`}
       >
         {ServiceList.map((service, i) => (
-          <motion.div
+          <motion.ul
+            variants={itemVariants} // Apply staggered child animationƒ
             key={i}
             className="flex flex-col min-h-full"
-            initial={{ opacity: 0 }}
+            initial={{ top: 0, left: 0 }}
             animate={{
               opacity: 1,
             }}
             transition={{
               duration: 0.5,
               type: "tween",
-              delay: 1,
+              delay: 0.3,
             }}
           >
             <Card className="flex-grow">
-              <img src={service.image} alt="No File" className="w-full" />
+              <motion.li
+                className="rounded-sm"
+                key={i}
+                variants={itemVariants} // Apply staggered child animation
+                custom={i} // Pass index for stagger delay calculation
+                delay={3}
+                whileHover={{ scale: 1.21 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <img src={service.image} alt="No File" className="w-full" />
+              </motion.li>
               <CardContent className="flex-grow">
                 <Typography gutterBottom variant="h5" component="div">
                   {service.service}
@@ -64,7 +95,7 @@ export const ProductsSub = ({ topBarOn }) => {
                 </Button>
               </CardActions>
             </Card>
-          </motion.div>
+          </motion.ul>
         ))}
       </div>
     </div>
