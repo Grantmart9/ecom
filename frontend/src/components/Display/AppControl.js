@@ -4,9 +4,6 @@ import I2 from "Images/I2.jpg";
 import I3 from "Images/I3.jpeg";
 import I4 from "Images/I4.jpg";
 
-///////////////////////////////
-import HomeIcon from "@mui/icons-material/Home";
-
 // Text color //
 export const textcolor = "#4A403C";
 export const layouttextcolor = "#f0f7f7";
@@ -17,7 +14,7 @@ export const masterbgcolor = layoutbgcolor;
 export const pagebgcolor = "white";
 
 // Text font //
-export const AppFont = "Roboto, sans-serif";
+export const AppFont = "Geist, sans-serif;";
 
 // Button Styling //
 export const ButtonStyle = { bgcolor: layoutbgcolor, color: layouttextcolor };

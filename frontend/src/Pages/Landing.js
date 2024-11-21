@@ -25,12 +25,11 @@ const StaticAdvert = ({ topBarOn }) => {
 
   // Child variants for individual staggered animation
   const itemVariants = {
-    initial: { opacity: 0, y: 20 }, // Start below
+    initial: { y: 30 }, // Start below
     animate: (i) => ({
-      opacity: 1,
       y: 0, // Move up to the final position
       transition: {
-        delay: i * 0.1, // Delay for staggering
+        delay: i * 0.35, // Delay for staggering
         type: "spring",
         stiffness: 10,
         damping: 4,
@@ -66,14 +65,42 @@ const StaticAdvert = ({ topBarOn }) => {
             key={i}
             variants={itemVariants} // Apply staggered child animation
             custom={i} // Pass index for stagger delay calculation
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.045 }}
+            whileTap={{ scale: 0.97 }}
           >
             <img src={item} alt={`Ad ${i}`} />
           </motion.li>
         ))}
       </motion.ul>
     </div>
+  );
+};
+
+const Banner = ({ isResponsiveSize }) => {
+  return (
+    <motion.div
+      initial={{ width: "0%" }}
+      animate={{
+        width: "100%",
+      }}
+      transition={{
+        duration: 3,
+        type: "spring",
+        stiffness: 10,
+        damping: 4,
+        delay: 1,
+      }}
+      style={{
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+        fontSize: isResponsiveSize ? "14pt" : "20pt",
+        fontWeight: "lighter",
+        fontFamily: AppFont,
+      }}
+      className="flex text-center justify-center"
+    >
+      RECENTLY ADDED
+    </motion.div>
   );
 };
 
@@ -97,7 +124,7 @@ export const Landing = ({ topBarOn }) => {
           marginRight: "7pt",
           marginBottom: "7pt",
         }}
-        className="flex align-center justify-center"
+        className="flex align-center justify-center rounded-t-sm"
         initial={{ opacity: "0%" }}
         animate={{
           opacity: "100%",
@@ -107,29 +134,7 @@ export const Landing = ({ topBarOn }) => {
           delay: 0.5,
         }}
       >
-        <motion.h1
-          initial={{ width: "0%" }}
-          animate={{
-            width: "100%",
-          }}
-          transition={{
-            duration: 3,
-            type: "spring",
-            stiffness: "10",
-            damping: "1",
-            delay: 1,
-          }}
-          style={{
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "20pt" : "40pt",
-            fontWeight: "bold",
-            fontFamily: AppFont,
-          }}
-          className="flex text-center justify-center "
-        >
-          Recently added
-        </motion.h1>
+        <Banner isResponsiveSize={isResponsiveSize} />
       </motion.div>
       <div
         style={{

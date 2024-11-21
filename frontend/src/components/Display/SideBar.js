@@ -27,7 +27,8 @@ export const SideBar = ({ setTopBarOn }) => {
             style={{
               fontFamily: AppFont,
               color: layouttextcolor,
-              fontWeight: "bold",
+              fontWeight: "lighter",
+
               fontSize: isResponsiveSize ? "7pt" : "10pt",
             }}
           >
