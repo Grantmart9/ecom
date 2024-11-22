@@ -213,7 +213,7 @@ export const Products = ({ topBarOn }) => {
               ? "0pt"
               : "48pt"
             : isResponsiveSize
-            ? "45pt"
+            ? "10pt"
             : "48pt",
         }}
       >

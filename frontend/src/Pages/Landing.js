@@ -25,14 +25,14 @@ const StaticAdvert = ({ topBarOn }) => {
 
   // Child variants for individual staggered animation
   const itemVariants = {
-    initial: { y: 15 }, // Start below
+    initial: { y: 8 }, // Start below
     animate: (i) => ({
       y: 0, // Move up to the final position
       transition: {
         delay: i * 0.21, // Delay for staggering
         type: "spring",
         stiffness: 100,
-        damping: 3.6,
+        damping: 6,
       },
     }),
   };
