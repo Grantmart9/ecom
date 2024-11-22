@@ -67,7 +67,7 @@ const StaticAdvert = ({ topBarOn }) => {
             custom={i} // Pass index for stagger delay calculation
             delay={3}
             whileHover={{ scale: 1.043 }}
-            whileTap={{ scale: 0.97 }}
+            whileTap={{ scale: 0.80 }}
           >
             <img src={item} alt={`Ad ${i}`} />
           </motion.li>

@@ -11,7 +11,7 @@ export const PageFooter = () => {
         paddingBottom: "5pt",
         paddingTop: "5pt",
       }}
-      className="grid sm:grid-cols-3 gap-2"
+      className="grid sm:grid-flow-col gap-2"
     >
       <SocialMediaIcons />
       <ContactUs />
