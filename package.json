@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "flubber": "^0.4.2",
+    "three": "^0.170.0"
+  }
+}

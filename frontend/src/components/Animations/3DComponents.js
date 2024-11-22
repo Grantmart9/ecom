@@ -14,7 +14,7 @@ export const ThreeJSComponent = () => {
     // Create the scene and camera
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      45,
+      30,
       main.offsetWidth / main.offsetHeight,
       0.1,
       1000
@@ -55,23 +55,23 @@ export const ThreeJSComponent = () => {
 
     // Create the geometry from the star shape and extrude it
     const geometry = new THREE.ExtrudeGeometry(createStarShape(), {
-      depth: 0.5, // The extrusion depth (how thick the star is)
+      depth: 0.3, // The extrusion depth (how thick the star is)
       bevelEnabled: true, // Optionally enable bevel for rounded edges
       bevelSegments: 10, // Number of bevel segments
       steps: 1, // How many times the shape is extruded
-      bevelSize: 0.1, // Size of the bevel
+      bevelSize: 0.06, // Size of the bevel
       bevelThickness: 0.1, // Thickness of the bevel
     });
 
     // Material for the star
-    const material = new THREE.MeshPhongMaterial({ color: 0x4FC3F7 });
+    const material = new THREE.MeshPhongMaterial({ color: 0xedd51c });
     const star = new THREE.Mesh(geometry, material);
     scene.add(star);
 
     // Set up lighting
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xfff8d9, 0.8);
     directionalLight.position.set(2, 2, 2);
-    const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+    const ambientLight = new THREE.AmbientLight(0xfceda9); // soft white light
     scene.add(ambientLight);
     scene.add(directionalLight);
 
@@ -89,7 +89,7 @@ export const ThreeJSComponent = () => {
     animate(
       star.rotation,
       { y: Math.PI * 2, z: Math.PI * 2 }, // Rotate the star 360 degrees
-      { duration: 7, repeat: Infinity, ease: "easeInOut" }
+      { duration: 7, repeat: Infinity, ease:"linear" }
     );
 
     // Resize handling for responsive canvas
@@ -111,7 +111,7 @@ export const ThreeJSComponent = () => {
   return (
     <div
       ref={canvasRef}
-      style={{ width: "100%", height: "300px", backgroundColor: "whitesmoke" }}
+      style={{ width: "100%", height: "300px" }}
     >
       {/* Three.js canvas will be appended here */}
     </div>

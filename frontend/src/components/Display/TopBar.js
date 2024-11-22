@@ -36,7 +36,7 @@ export const TopBar = ({ setTopBarOn }) => {
                   fontSize="medium"
                 />
               </IconButton>
-              <IconButton href={"/Login"}>
+              <IconButton href={"/login"}>
                 <AccountCircleIcon
                   sx={{ color: layouttextcolor }}
                   fontSize="medium"
@@ -102,7 +102,7 @@ export const TopBar = ({ setTopBarOn }) => {
                   fontSize="medium"
                 />
               </IconButton>
-              <IconButton href={"/Login"}>
+              <IconButton href={"/login"}>
                 <AccountCircleIcon
                   sx={{ color: layouttextcolor }}
                   fontSize="medium"

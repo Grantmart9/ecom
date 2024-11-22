@@ -5,6 +5,7 @@ import { Contact } from "Pages/Contact";
 import { Products } from "Pages/Products";
 import { Routes } from "components/Display/AppControl";
 import { Login } from "Pages/Login";
+import { Cart } from "Pages/Cart";
 
 export const ScreenLayoutInner = ({ topBarOn }) => {
   return (
@@ -19,8 +20,11 @@ export const ScreenLayoutInner = ({ topBarOn }) => {
         <Route path={Routes[3].path}>
           <Contact topBarOn={topBarOn} />
         </Route>
-        <Route path="/Login">
+        <Route path="/login">
           <Login topBarOn={topBarOn} />
+        </Route>
+        <Route path="/shoppingcart">
+          <Cart topBarOn={topBarOn} />
         </Route>
         <Route path="/">
           <Landing topBarOn={topBarOn} />
