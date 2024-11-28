@@ -90,36 +90,6 @@ export const Landing = ({ topBarOn }) => {
     <div>
       <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
       <div
-        style={{ width: "100%", marginBottom: "10pt" }}
-        className="flex text-center justify-center"
-      >
-        <motion.div
-          initial={{ width: "0%", backgroundColor: "transparent" }}
-          animate={{
-            width: "50%",
-            backgroundColor: "black",
-          }}
-          transition={{
-            duration: 3,
-            type: "spring",
-            stiffness: 100,
-            damping: 10,
-            delay: 0.4,
-          }}
-          className="rounded-sm shadow-md"
-          style={{
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "14pt" : "20pt",
-            fontWeight: "lighter",
-            fontFamily: AppFont,
-            color: "whitesmoke",
-          }}
-        >
-          RECENTLY ADDED
-        </motion.div>
-      </div>
-      <div
         style={{
           zIndex: 4,
           width: "100%",

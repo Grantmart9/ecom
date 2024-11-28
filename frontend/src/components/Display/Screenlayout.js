@@ -35,10 +35,10 @@ export const ScreenLayout = () => {
                 initial={{ y: "-100%", marginTop: 0 }}
                 animate={{
                   y: "0pt",
-                  marginTop: "40pt",
+                  marginTop: "39pt",
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 1.5,
                   type: "spring",
                 }}
               >

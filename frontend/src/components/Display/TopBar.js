@@ -101,7 +101,7 @@ export const TopBar = ({ setTopBarOn }) => {
                   </IconButton>
                 </Tooltip>
               </div>
-              <Tooltip title="Products">
+              <Tooltip title="Checkout">
                 <IconButton href={"/shoppingcart"}>
                   <ShoppingBasketIcon
                     sx={{ color: layouttextcolor }}

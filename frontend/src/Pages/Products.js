@@ -14,12 +14,12 @@ import Ad2 from "Images/ad2.png";
 import Ad3 from "Images/ad3.png";
 import Ad4 from "Images/ad4.png";
 import { useAxios } from "components/API/Axios";
+import { AppFont } from "components/Display/AppControl";
 
 const Departments = ({ topBarOn, setAPIPath }) => {
   const size = Size();
 
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
-  const isResponsiveSize2 = ["XS", "SM", "MD", "L"].includes(size);
 
   const DepartmentList = [
     { image: Ad1, API_path: "department1" },
@@ -38,50 +38,104 @@ const Departments = ({ topBarOn, setAPIPath }) => {
     // refetch(); // Trigger a refetch for the new API path
   };
 
+  const itemVariants = {
+    initial: { y: 25 }, // Start below
+    animate: (i) => ({
+      y: 0, // Move up to the final position
+      transition: {
+        delay: i * 0.21, // Delay for staggering
+        type: "spring",
+        stiffness: 100,
+        damping: 3.6,
+      },
+    }),
+  };
+
   return (
-    <Card className="mx-2.5 mb-3">
-      <motion.CardContent
-        className={`grid grid-${
-          isResponsiveSize ? "cols-2" : "cols-6"
-        } gap-1 px-2.5 pt-3`}
-        initial="initial"
-        animate="animate"
-        style={{
-          marginTop: topBarOn
-            ? isResponsiveSize
-              ? "0pt"
-              : isResponsiveSize2
-              ? "0pt"
-              : "47pt"
-            : isResponsiveSize
-            ? "42pt"
-            : "47pt",
-        }}
-        transition={{ duration: 1, type: "spring" }}
+    <div
+      style={{
+        marginLeft: "10pt",
+        marginRight: isResponsiveSize ? "10pt" : "0pt",
+      }}
+    >
+      <div
+        style={{ width: "100%", marginBottom: "10pt" }}
+        className="flex text-center justify-center"
+      >
+        <motion.div
+          initial={{ width: "0%", backgroundColor: "transparent" }}
+          animate={{
+            width: "50%",
+            backgroundColor: "black",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            delay: 0.4,
+          }}
+          className="rounded-sm shadow-md"
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "14pt" : "20pt",
+            fontWeight: "lighter",
+            fontFamily: AppFont,
+            color: "whitesmoke",
+          }}
+        >
+          DEPARTMENTS
+        </motion.div>
+      </div>{" "}
+      <div
+        className={`grid ${
+          isResponsiveSize ? "grid-cols-2" : "grid-cols-6"
+        } gap-3 min-h-full mt-3`}
       >
         {DepartmentList.map((item, i) => (
-          <motion.li
-            key={i}
-            whileHover={{ scale: 1.045 }}
-            whileTap={{ scale: 0.92 }}
-            className="flex align-center justify-center"
-            onClick={FetchDepartments(item.API_path)} // Update the URL state
-          >
-            <img
-              style={{
-                width: "200px",
-                height: "200px",
-                borderRadius: "50%",
-                overflow: "hidden",
-                marginBottom: "10pt",
+          <div>
+            <motion.ul
+              variants={itemVariants} // Apply staggered child animationƒ
+              key={i}
+              className="flex flex-col min-h-full"
+              initial={{ top: 0, left: 0 }}
+              animate={{
+                opacity: 1,
               }}
-              src={item.image}
-              alt={`Ad ${i}`}
-            />
-          </motion.li>
+              transition={{
+                duration: 5,
+                type: "tween",
+                delay: 1,
+              }}
+            >
+              <motion.li
+                className="rounded-sm"
+                key={i}
+                variants={itemVariants} // Apply staggered child animation
+                custom={i} // Pass index for stagger delay calculation
+                delay={3}
+                whileHover={{ scale: 1.045 }}
+                whileTap={{ scale: 0.94 }}
+                onClick={FetchDepartments(item.API_path)} // Update the URL state
+              >
+                <img
+                  style={{
+                    width: "200px",
+                    height: "200px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    marginBottom: "10pt",
+                  }}
+                  src={item.image}
+                  alt={`Ad ${i}`}
+                />
+              </motion.li>
+            </motion.ul>
+          </div>
         ))}
-      </motion.CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 
@@ -113,9 +167,39 @@ export const ProductsSub = ({ topBarOn }) => {
       }}
     >
       <div
+        style={{ width: "100%", marginBottom: "10pt" }}
+        className="flex text-center justify-center"
+      >
+        <motion.div
+          initial={{ width: "0%", backgroundColor: "transparent" }}
+          animate={{
+            width: "50%",
+            backgroundColor: "black",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            delay: 0.4,
+          }}
+          className="rounded-sm shadow-md"
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "14pt" : "20pt",
+            fontWeight: "lighter",
+            fontFamily: AppFont,
+            color: "whitesmoke",
+          }}
+        >
+          RECENTLY ADDED
+        </motion.div>
+      </div>
+      <div
         className={`grid ${
           isResponsiveSize ? "grid-cols-1" : "grid-cols-4"
-        } gap-3 min-h-full`}
+        } gap-3 min-h-full mt-3`}
       >
         {ServiceList.map((service, i) => (
           <motion.ul
@@ -140,7 +224,7 @@ export const ProductsSub = ({ topBarOn }) => {
                 custom={i} // Pass index for stagger delay calculation
                 delay={3}
                 whileHover={{ scale: 1.045 }}
-                whileTap={{ scale: 0.94 }}
+                whileTap={{ scale: 0.9 }}
               >
                 <img src={service.image} alt="No File" className="w-full" />
               </motion.li>
@@ -172,6 +256,9 @@ export const ProductsSub = ({ topBarOn }) => {
 };
 
 export const Products = ({ topBarOn }) => {
+  const size = Size();
+  const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
+
   const [url, setUrl] = useState(""); // Initialize URL state
 
   // Call the custom useAxios hook
@@ -184,6 +271,18 @@ export const Products = ({ topBarOn }) => {
 
   return (
     <div>
+      <div
+        style={{
+          paddingTop: topBarOn
+            ? isResponsiveSize
+              ? "10pt"
+              : "60pt"
+            : isResponsiveSize
+            ? "50pt"
+            : "60pt",
+          paddingLeft: isResponsiveSize ? "5pt" : "10pt",
+        }}
+      ></div>
       <Departments
         topBarOn={topBarOn}
         refetch={(newPath) => refetch} // Ensure refetch is passed here
