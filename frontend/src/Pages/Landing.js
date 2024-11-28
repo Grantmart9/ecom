@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Size } from "components/Display/media-query";
 import { AppFont } from "components/Display/AppControl";
 import { PageFooter } from "components/Display/PageFooter";
@@ -41,7 +41,7 @@ const StaticAdvert = ({ topBarOn }) => {
     <div>
       <motion.ul
         className={`grid grid-${isResponsiveSize ? "cols-2" : "cols-4"} gap-1 
-    } px-2 pb-3 pt-4`}
+    } px-2 pb-3 pt-2`}
         initial="initial"
         animate="animate"
         style={{
@@ -67,7 +67,7 @@ const StaticAdvert = ({ topBarOn }) => {
             custom={i} // Pass index for stagger delay calculation
             delay={3}
             whileHover={{ scale: 1.043 }}
-            whileTap={{ scale: 0.80 }}
+            whileTap={{ scale: 1.0 }}
           >
             <img src={item} alt={`Ad ${i}`} />
           </motion.li>

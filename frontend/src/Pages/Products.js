@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Size } from "components/Display/media-query";
 import { PageFooter } from "components/Display/PageFooter";
 import { CardActions } from "@mui/material";
@@ -13,86 +13,81 @@ import Ad1 from "Images/ad1.png";
 import Ad2 from "Images/ad2.png";
 import Ad3 from "Images/ad3.png";
 import Ad4 from "Images/ad4.png";
+import { useAxios } from "components/API/Axios";
 
-const Departments = ({ topBarOn }) => {
-  const ImageList = [Ad1, Ad2, Ad3, Ad4, Ad1, Ad2, Ad3, Ad4];
-  var size = Size();
+const Departments = ({ topBarOn, setAPIPath }) => {
+  const size = Size();
+
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
   const isResponsiveSize2 = ["XS", "SM", "MD", "L"].includes(size);
 
-  // Parent variant for stagger animation
-  const parentVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-  };
+  const DepartmentList = [
+    { image: Ad1, API_path: "department1" },
+    { image: Ad2, API_path: "department2" },
+    { image: Ad3, API_path: "department3" },
+    { image: Ad4, API_path: "department4" },
+    { image: Ad1, API_path: "department5" },
+    { image: Ad2, API_path: "department6" },
+    { image: Ad1, API_path: "department5" },
+    { image: Ad2, API_path: "department6" },
+  ];
 
-  // Child variants for individual staggered animation
-  const itemVariants = {
-    initial: { opacity: 0 }, // Start below
-    animate: (i) => ({
-      opacity: 1, // Move up to the final position
-      transition: {
-        delay: i * 0.11, // Delay for staggering
-      },
-    }),
+  const FetchDepartments = ({ newPath }) => {
+    console.log(newPath);
+    // setUrl(newPath); // Update the URL state
+    // refetch(); // Trigger a refetch for the new API path
   };
 
   return (
-    <motion.ul
-      className={`grid grid-${isResponsiveSize ? "cols-2" : "cols-6"} gap-1
-} mx-2`}
-      initial="initial"
-      animate="animate"
-      style={{
-        marginTop: topBarOn
-          ? isResponsiveSize
-            ? "0pt"
-            : isResponsiveSize2
-            ? "0pt"
-            : "47pt"
-          : isResponsiveSize
-          ? "42pt"
-          : "47pt",
-      }}
-      variants={parentVariants} // Parent animation for fade-in
-      transition={{ duration: 1, type: "spring" }}
-    >
-      {ImageList.map((item, i) => (
-        <motion.li
-          key={i}
-          variants={itemVariants} // Apply staggered child animation
-          custom={i} // Pass index for stagger delay calculation
-          delay={3}
-          whileHover={{ scale: 1.045 }}
-          whileTap={{ scale: 0.80 }}
-          className="flex align-center justify-center"
-        >
-          <img
-            style={{
-              width: "200px",
-              height: "200px",
-              borderRadius: "50%",
-              overflow: "hidden",
-              marginBottom: "10pt",
-            }}
-            src={item}
-            alt={`Ad ${i}`}
-          />
-        </motion.li>
-      ))}
-    </motion.ul>
+    <Card className="mx-2.5 mb-3">
+      <motion.CardContent
+        className={`grid grid-${
+          isResponsiveSize ? "cols-2" : "cols-6"
+        } gap-1 px-2.5 pt-3`}
+        initial="initial"
+        animate="animate"
+        style={{
+          marginTop: topBarOn
+            ? isResponsiveSize
+              ? "0pt"
+              : isResponsiveSize2
+              ? "0pt"
+              : "47pt"
+            : isResponsiveSize
+            ? "42pt"
+            : "47pt",
+        }}
+        transition={{ duration: 1, type: "spring" }}
+      >
+        {DepartmentList.map((item, i) => (
+          <motion.li
+            key={i}
+            whileHover={{ scale: 1.045 }}
+            whileTap={{ scale: 0.92 }}
+            className="flex align-center justify-center"
+            onClick={FetchDepartments(item.API_path)} // Update the URL state
+          >
+            <img
+              style={{
+                width: "200px",
+                height: "200px",
+                borderRadius: "50%",
+                overflow: "hidden",
+                marginBottom: "10pt",
+              }}
+              src={item.image}
+              alt={`Ad ${i}`}
+            />
+          </motion.li>
+        ))}
+      </motion.CardContent>
+    </Card>
   );
 };
 
 export const ProductsSub = ({ topBarOn }) => {
   const size = Size();
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
-
-  // Parent variant for stagger animation
-  const parentVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-  };
 
   // Child variants for individual staggered animation
   const itemVariants = {
@@ -177,56 +172,24 @@ export const ProductsSub = ({ topBarOn }) => {
 };
 
 export const Products = ({ topBarOn }) => {
-  var size = Size();
-  const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
+  const [url, setUrl] = useState(""); // Initialize URL state
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
+  // Call the custom useAxios hook
+  const { data, loading, error, refetch } = useAxios(
+    `http://127.0.0.1:5000/${url}`, // Dynamic URL
+    "GET",
+    {},
+    false // Disable auto-fetch to rely on manual refetch
+  );
 
   return (
-    <div
-      className="block"
-      style={{
-        width: topBarOn
-          ? isResponsiveSize
-            ? "calc(100vw)"
-            : "calc(100vw - 200px)"
-          : isResponsiveSize
-          ? "calc(100vw)"
-          : "calc(100vw)",
-      }}
-    >
-      <div
-        style={{
-          paddingTop: "10pt",
-        }}
-      >
-        <Departments topBarOn={topBarOn} />
-      </div>
-      <div
-        style={{
-          zIndex: 2,
-          width: "100%",
-          paddingTop: topBarOn
-            ? isResponsiveSize
-              ? "0pt"
-              : "48pt"
-            : isResponsiveSize
-            ? "10pt"
-            : "48pt",
-        }}
-      >
-        <ProductsSub topBarOn={topBarOn} />
-      </div>
-      <div
-        style={{
-          zIndex: 3,
-          width: "100%",
-        }}
-      >
-        <PageFooter />
-      </div>
+    <div>
+      <Departments
+        topBarOn={topBarOn}
+        refetch={(newPath) => refetch} // Ensure refetch is passed here
+      />
+      <ProductsSub topBarOn={topBarOn} />
+      <PageFooter />
     </div>
   );
 };

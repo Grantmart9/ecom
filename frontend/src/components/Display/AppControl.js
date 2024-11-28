@@ -3,6 +3,10 @@ import I1 from "Images/I1.jpg";
 import I2 from "Images/I2.jpg";
 import I3 from "Images/I3.jpeg";
 import I4 from "Images/I4.jpg";
+import RedeemIcon from "@mui/icons-material/Redeem";
+import HouseIcon from "@mui/icons-material/House";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import CallIcon from "@mui/icons-material/Call";
 
 // Text color //
 export const textcolor = "#4A403C";
@@ -80,17 +84,40 @@ export const ServiceList = [
 ];
 
 export const Routes = [
-  { path: "/home", name: "Home" },
+  {
+    path: "/home",
+    name: (
+      <>
+        <HouseIcon />
+      </>
+    ),
+    tooltip: "Home",
+  },
   {
     path: "/shop",
-    name: "Products",
+    name: (
+      <>
+        <RedeemIcon />
+      </>
+    ),
+    tooltip: "Products",
   },
   {
     path: "/deals",
-    name: "Deals",
+    name: (
+      <>
+        <LocalOfferIcon />
+      </>
+    ),
+    tooltip: "Deals",
   },
   {
     path: "/contactus",
-    name: "Contact Us",
+    name: (
+      <>
+        <CallIcon />
+      </>
+    ),
+    tooltip: "Contact Us",
   },
 ];

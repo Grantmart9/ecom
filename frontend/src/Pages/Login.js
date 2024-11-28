@@ -62,7 +62,7 @@ export const Login = ({ topBarOn }) => {
               label="password"
             />
             <div style={{ color: "whitesmoke" }} className="text-center">
-             Do you have an account ?
+              Do you have an account ?
             </div>
             <Button
               style={{
@@ -75,9 +75,7 @@ export const Login = ({ topBarOn }) => {
             >
               Login
             </Button>
-            <div style={{ color: "whitesmoke" }} className="text-center">
-              or
-            </div>
+            <div className="text-center justify-center" style={{ color: "white" }}>-------------------- or --------------------</div>
             <Button
               style={{
                 backgroundColor: "black",

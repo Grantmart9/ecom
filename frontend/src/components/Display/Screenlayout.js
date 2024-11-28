@@ -35,7 +35,7 @@ export const ScreenLayout = () => {
                 initial={{ y: "-100%", marginTop: 0 }}
                 animate={{
                   y: "0pt",
-                  marginTop: "30pt",
+                  marginTop: "40pt",
                 }}
                 transition={{
                   duration: 2,
@@ -52,8 +52,8 @@ export const ScreenLayout = () => {
                 <div
                   style={{
                     position: "fixed",
-                    paddingTop: "40pt",
-                    width: "200px",
+                    paddingTop: "calc(100vh - (80/100*100vh)",
+                    width: "80px",
                     zIndex: 1000, // Ensure it’s on top of other content
                     backgroundColor: layoutbgcolor,
                     height: "100vh",
@@ -64,7 +64,7 @@ export const ScreenLayout = () => {
               </Slide>
               <div
                 style={{
-                  marginLeft: "200px",
+                  marginLeft: "80px",
                 }}
               >
                 <ScreenLayoutInner topBarOn={topBarOn} />

@@ -1,4 +1,4 @@
-import { CardContent, Card, Typography } from "@mui/material";
+import { Card } from "@mui/material";
 import { TextField, Button } from "@mui/material";
 
 export const Cart = ({ isResponsiveSize, topBarOn }) => {

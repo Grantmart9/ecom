@@ -11,12 +11,6 @@ export const ContactUs = () => {
   return (
     <div className="flex align-center justify-center my-auto">
       <Card sx={{ backgroundColor: layoutbgcolor, boxShadow: "none" }}>
-        <CardContent
-          className="flex align-center justify-center"
-          sx={{ color: layouttextcolor }}
-        >
-          Contact Us
-        </CardContent>
         <Typography
           className="grid grid-flow-row gap-0"
           sx={{ color: layouttextcolor }}
