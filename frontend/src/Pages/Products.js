@@ -56,6 +56,7 @@ const Departments = ({ topBarOn, setAPIPath }) => {
       style={{
         marginLeft: "10pt",
         marginRight: isResponsiveSize ? "10pt" : "0pt",
+        marginBottom: "10pt",
       }}
     >
       <div
@@ -65,7 +66,7 @@ const Departments = ({ topBarOn, setAPIPath }) => {
         <motion.div
           initial={{ width: "0%", backgroundColor: "transparent" }}
           animate={{
-            width: "50%",
+            width: "80%",
             backgroundColor: "black",
           }}
           transition={{
@@ -87,14 +88,14 @@ const Departments = ({ topBarOn, setAPIPath }) => {
         >
           DEPARTMENTS
         </motion.div>
-      </div>{" "}
+      </div>
       <div
         className={`grid ${
-          isResponsiveSize ? "grid-cols-2" : "grid-cols-6"
-        } gap-3 min-h-full mt-3`}
+          isResponsiveSize ? "grid-cols-3" : "grid-flow-col"
+        } gap-1 min-h-full`}
       >
         {DepartmentList.map((item, i) => (
-          <div>
+          <div className="bg-pink">
             <motion.ul
               variants={itemVariants} // Apply staggered child animationƒ
               key={i}
@@ -121,11 +122,10 @@ const Departments = ({ topBarOn, setAPIPath }) => {
               >
                 <img
                   style={{
-                    width: "200px",
-                    height: "200px",
+                    width: "150px",
+                    height: "150px",
                     borderRadius: "50%",
                     overflow: "hidden",
-                    marginBottom: "10pt",
                   }}
                   src={item.image}
                   alt={`Ad ${i}`}
@@ -173,7 +173,7 @@ export const ProductsSub = ({ topBarOn }) => {
         <motion.div
           initial={{ width: "0%", backgroundColor: "transparent" }}
           animate={{
-            width: "50%",
+            width: "80%",
             backgroundColor: "black",
           }}
           transition={{
@@ -258,6 +258,7 @@ export const ProductsSub = ({ topBarOn }) => {
 export const Products = ({ topBarOn }) => {
   const size = Size();
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
+  const isResponsiveSize2 = ["XS", "SM"].includes(size);
 
   const [url, setUrl] = useState(""); // Initialize URL state
 
@@ -276,6 +277,8 @@ export const Products = ({ topBarOn }) => {
           paddingTop: topBarOn
             ? isResponsiveSize
               ? "10pt"
+              : isResponsiveSize2
+              ? "70pt"
               : "60pt"
             : isResponsiveSize
             ? "50pt"
