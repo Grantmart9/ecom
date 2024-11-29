@@ -15,7 +15,7 @@ const StaticAdvert = ({ topBarOn }) => {
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
   const isResponsiveSize2 = ["XS", "SM", "MD", "L"].includes(size);
 
-  const ImageList = [Ad1, Ad2, Ad3, Ad4];
+  const ImageList = [Ad1, Ad2, Ad3, Ad4, Ad1, Ad2];
 
   // Parent variant for stagger animation
   const parentVariants = {
@@ -40,8 +40,9 @@ const StaticAdvert = ({ topBarOn }) => {
   return (
     <div>
       <motion.ul
-        className={`grid grid-flow-col-dense gap-1 
-    } px-2 pb-3 pt-2`}
+        className={`grid ${
+          isResponsiveSize ? "grid-cols-3" : "grid-flow-col-dense"
+        } gap-1 px-2 pb-3 pt-2`}
         initial="initial"
         animate="animate"
         style={{
