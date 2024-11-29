@@ -6,31 +6,17 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { pagebgcolor } from "components/Display/AppControl";
-import { ServiceList } from "components/Display/AppControl";
+import { ProductList } from "components/Display/AppControl";
 import Button from "@mui/material/Button";
 import { motion } from "framer-motion"; // Use framer-motion for animations
-import Ad1 from "Images/ad1.png";
-import Ad2 from "Images/ad2.png";
-import Ad3 from "Images/ad3.png";
-import Ad4 from "Images/ad4.png";
 import { useAxios } from "components/API/Axios";
 import { AppFont } from "components/Display/AppControl";
+import { DepartmentList } from "components/Display/AppControl";
 
-const Departments = ({ topBarOn, setAPIPath }) => {
+const Departments = () => {
   const size = Size();
 
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
-
-  const DepartmentList = [
-    { image: Ad1, API_path: "department1" },
-    { image: Ad2, API_path: "department2" },
-    { image: Ad3, API_path: "department3" },
-    { image: Ad4, API_path: "department4" },
-    { image: Ad1, API_path: "department5" },
-    { image: Ad2, API_path: "department6" },
-    { image: Ad1, API_path: "department5" },
-    { image: Ad2, API_path: "department6" },
-  ];
 
   const FetchDepartments = ({ newPath }) => {
     console.log(newPath);
@@ -78,7 +64,7 @@ const Departments = ({ topBarOn, setAPIPath }) => {
           style={{
             overflow: "hidden",
             whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "12pt" : "12pt",
+            fontSize: isResponsiveSize ? "10pt" : "20pt",
             fontWeight: "lighter",
             fontFamily: AppFont,
             color: "black",
@@ -124,7 +110,7 @@ const Departments = ({ topBarOn, setAPIPath }) => {
           style={{
             overflow: "hidden",
             whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "12pt" : "12pt",
+            fontSize: isResponsiveSize ? "10pt" : "20pt",
             fontWeight: "lighter",
             fontFamily: AppFont,
             color: "black",
@@ -229,7 +215,7 @@ export const ProductsSub = ({ topBarOn }) => {
           style={{
             overflow: "hidden",
             whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "12pt" : "12pt",
+            fontSize: isResponsiveSize ? "10pt" : "20pt",
             fontWeight: "lighter",
             fontFamily: AppFont,
             color: "black",
@@ -245,7 +231,7 @@ export const ProductsSub = ({ topBarOn }) => {
           transition={{
             duration: 3,
             type: "spring",
-            stiffness: 5,
+            stiffness: 10,
             damping: 2,
             delay: 1,
           }}
@@ -275,7 +261,7 @@ export const ProductsSub = ({ topBarOn }) => {
           style={{
             overflow: "hidden",
             whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "12pt" : "12pt",
+            fontSize: isResponsiveSize ? "10pt" : "20pt",
             fontWeight: "lighter",
             fontFamily: AppFont,
             color: "black",
@@ -290,7 +276,7 @@ export const ProductsSub = ({ topBarOn }) => {
           isResponsiveSize ? "grid-cols-1" : "grid-cols-4"
         } gap-3 min-h-full mt-3`}
       >
-        {ServiceList.map((service, i) => (
+        {ProductList.map((service, i) => (
           <motion.ul
             variants={itemVariants} // Apply staggered child animationƒ
             key={i}

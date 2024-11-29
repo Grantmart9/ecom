@@ -2,12 +2,16 @@ import React, { useEffect } from "react";
 import { Size } from "components/Display/media-query";
 import { AppFont } from "components/Display/AppControl";
 import { PageFooter } from "components/Display/PageFooter";
+import Ad1 from "Images/ad1.png";
+import Ad2 from "Images/ad2.png";
+import Ad3 from "Images/ad3.png";
+import Ad4 from "Images/ad4.png";
 import { ProductsSub } from "./Products";
 import { motion } from "framer-motion";
-import { DealsLandingPage } from "components/Display/AppControl";
+import { DealsMainPage } from "components/Display/AppControl";
 
 // StaticAdvert component with stagger animation
-const StaticAdvert = ({ topBarOn }) => {
+const AllDeals = ({ topBarOn }) => {
   var size = Size();
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
   const isResponsiveSize2 = ["XS", "SM", "MD", "L"].includes(size);
@@ -36,7 +40,7 @@ const StaticAdvert = ({ topBarOn }) => {
     <div>
       <motion.ul
         className={`grid ${
-          isResponsiveSize ? "grid-cols-3" : "grid-flow-col-dense"
+          isResponsiveSize ? "grid-cols-3" : "grid-cols-6"
         } gap-1 px-2 pb-3 pt-2`}
         initial="initial"
         animate="animate"
@@ -54,7 +58,7 @@ const StaticAdvert = ({ topBarOn }) => {
         variants={parentVariants} // Parent animation for fade-in
         transition={{ duration: 1, type: "spring" }}
       >
-        {DealsLandingPage.map((item, i) => (
+        {DealsMainPage.map((item, i) => (
           <motion.li
             style={{ backgroundColor: "black", padding: 3 }}
             className="rounded-sm"
@@ -73,7 +77,7 @@ const StaticAdvert = ({ topBarOn }) => {
   );
 };
 
-export const Landing = ({ topBarOn }) => {
+export const Deals = ({ topBarOn }) => {
   var size = Size();
   const isResponsiveSize = ["XS", "SM", "MD", "L"].includes(size);
 
@@ -84,7 +88,7 @@ export const Landing = ({ topBarOn }) => {
 
   return (
     <div>
-      <StaticAdvert topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
+      <AllDeals topBarOn={topBarOn} isResponsiveSize={isResponsiveSize} />
       <div
         style={{
           zIndex: 4,
