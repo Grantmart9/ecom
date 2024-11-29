@@ -64,29 +64,73 @@ const Departments = ({ topBarOn, setAPIPath }) => {
         className="flex text-center justify-center"
       >
         <motion.div
-          initial={{ width: "0%", backgroundColor: "transparent" }}
+          initial={{ width: "0%" }}
           animate={{
             width: "80%",
-            backgroundColor: "black",
           }}
           transition={{
             duration: 3,
             type: "spring",
-            stiffness: 100,
-            damping: 10,
-            delay: 0.4,
+            stiffness: 5,
+            damping: 2,
+            delay: 0,
           }}
-          className="rounded-sm shadow-md"
           style={{
             overflow: "hidden",
             whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "14pt" : "20pt",
+            fontSize: isResponsiveSize ? "12pt" : "12pt",
             fontWeight: "lighter",
             fontFamily: AppFont,
-            color: "whitesmoke",
+            color: "black",
+          }}
+        >
+          _____________________________________________
+        </motion.div>
+        <motion.div
+          initial={{ width: "0%" }}
+          animate={{
+            width: "80%",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 5,
+            damping: 2,
+            delay: 1,
+          }}
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "12pt" : "20pt",
+            fontWeight: "lighter",
+            fontFamily: AppFont,
+            color: "black",
           }}
         >
           DEPARTMENTS
+        </motion.div>
+        <motion.div
+          initial={{ width: "0%" }}
+          animate={{
+            width: "80%",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 5,
+            damping: 2,
+            delay: 0,
+          }}
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "12pt" : "12pt",
+            fontWeight: "lighter",
+            fontFamily: AppFont,
+            color: "black",
+          }}
+        >
+          _____________________________________________
         </motion.div>
       </div>
       <div
@@ -171,29 +215,74 @@ export const ProductsSub = ({ topBarOn }) => {
         className="flex text-center justify-center"
       >
         <motion.div
-          initial={{ width: "0%", backgroundColor: "transparent" }}
+          initial={{ width: "0%" }}
           animate={{
             width: "80%",
-            backgroundColor: "black",
           }}
           transition={{
             duration: 3,
             type: "spring",
-            stiffness: 100,
-            damping: 10,
-            delay: 0.4,
+            stiffness: 5,
+            damping: 2,
+            delay: 0,
           }}
-          className="rounded-sm shadow-md"
           style={{
             overflow: "hidden",
             whiteSpace: "nowrap",
-            fontSize: isResponsiveSize ? "14pt" : "20pt",
+            fontSize: isResponsiveSize ? "12pt" : "12pt",
             fontWeight: "lighter",
             fontFamily: AppFont,
-            color: "whitesmoke",
+            color: "black",
+          }}
+        >
+          _____________________________________________
+        </motion.div>
+        <motion.div
+          initial={{ width: "0%" }}
+          animate={{
+            width: "80%",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 5,
+            damping: 2,
+            delay: 1,
+          }}
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "12pt" : "20pt",
+            fontWeight: "lighter",
+            fontFamily: AppFont,
+            color: "black",
           }}
         >
           RECENTLY ADDED
+        </motion.div>
+        <motion.div
+          initial={{ width: "0%" }}
+          animate={{
+            width: "80%",
+          }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 5,
+            damping: 2,
+            delay: 0,
+          }}
+          style={{
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            fontSize: isResponsiveSize ? "12pt" : "12pt",
+            fontWeight: "lighter",
+            fontFamily: AppFont,
+            color: "black",
+          }}
+          className="flex text-center  justify-center"
+        >
+          _____________________________________________
         </motion.div>
       </div>
       <div
